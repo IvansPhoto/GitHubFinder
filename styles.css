@@ -1,5 +1,5 @@
 :root {
-	font-size: 15px;
+	font-size: 19px;
 	--color16: rgb(4, 8, 16);
 	--color32: rgb(24, 24, 40);
 	--color64: rgb(64, 32, 8);
@@ -53,4 +53,13 @@ p {
 	all: unset;
 	color: var(--color192);
 	font-size: 1.5rem;
+}
+
+form {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+button {
+	grid-column: span 2;
 }
