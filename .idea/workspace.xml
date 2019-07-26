@@ -30,23 +30,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scss/styles.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="952">
-                  <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+                <state relative-caret-position="2323">
+                  <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scss/_userProfile.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="193">
-                  <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-                  <folding>
-                    <element signature="e#812#1196#0" />
-                  </folding>
+                <state relative-caret-position="616">
+                  <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -58,8 +55,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scss/styles.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1159">
-                  <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
+                <state relative-caret-position="1978">
+                  <caret line="86" column="38" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -67,8 +64,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scss/_userProfile.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="690">
-                  <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+                <state relative-caret-position="1518">
+                  <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
@@ -76,12 +73,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/mainJS.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="423">
-                  <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+                <state relative-caret-position="630">
+                  <caret line="55" selection-start-line="55" selection-end-line="55" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#div#0;n#div#1;n#!!top" />
                   </folding>
                 </state>
               </provider>
@@ -119,9 +114,9 @@
         <option value="$PROJECT_DIR$/js/request.js" />
         <option value="$PROJECT_DIR$/css/styles.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/mainJS.js" />
-        <option value="$PROJECT_DIR$/scss/styles.scss" />
         <option value="$PROJECT_DIR$/scss/_userProfile.scss" />
+        <option value="$PROJECT_DIR$/scss/styles.scss" />
+        <option value="$PROJECT_DIR$/js/mainJS.js" />
       </list>
     </option>
   </component>
@@ -226,7 +221,8 @@
       <workItem from="1564054274217" duration="242000" />
       <workItem from="1564054576948" duration="9626000" />
       <workItem from="1564087141886" duration="1578000" />
-      <workItem from="1564128776086" duration="5880000" />
+      <workItem from="1564128776086" duration="10237000" />
+      <workItem from="1564144062329" duration="124000" />
     </task>
     <task id="LOCAL-00001" summary="Added form">
       <created>1563548958728</created>
@@ -249,11 +245,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564132150209</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Rebuild layout.">
+      <created>1564137372369</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1564137372369</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47254000" />
+    <option name="totallyTimeSpent" value="51735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
@@ -286,7 +289,8 @@
     <MESSAGE value="Added form" />
     <MESSAGE value="Added user-finder" />
     <MESSAGE value="Added user-finder fixed &quot;Not found&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added user-finder fixed &quot;Not found&quot;." />
+    <MESSAGE value="Rebuild layout." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rebuild layout." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/colors.css">
@@ -329,26 +333,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scss/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
+        <state relative-caret-position="1978">
+          <caret line="86" column="38" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scss/_userProfile.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+        <state relative-caret-position="1518">
+          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/mainJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="630">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#1;n#!!top" />
           </folding>
         </state>
       </provider>

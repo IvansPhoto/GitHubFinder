@@ -11,7 +11,7 @@ document.querySelector('form').addEventListener('submit', e => {
 
 	getUser(userName)
 		.then(userData => {
-			if (userData.message === "Not Found") return userNotFound(userData.message, userName);
+			if (userData.message === 'Not Found') return userNotFound(userData.message, userName);
 			writeProfile(userData);
 		})
 		.catch(error => userNotFound(error, userName));
@@ -24,11 +24,14 @@ async function getUser(userName) {
 	return profileResponse.json();
 }
 
+
 function writeProfile({name, login, avatar_url, html_url, public_gists, public_repos, followers, company, blog, location, created_at, following}) {
 	if (company === null) company = 'No company';
+
 	let profile = document.createElement('div');
 	profile.classList.add('userProfile');
 	profile.innerHTML = `
+	<div class="remove-record color-gray2">Remove record of ${login}.</div>
 	<div class="photo" style="background-image: url(${avatar_url})"></div>
 	<div class="userStatsAll">
 		<div class="userStat color-gray2">Public repos: ${public_repos}</div>
@@ -43,6 +46,19 @@ function writeProfile({name, login, avatar_url, html_url, public_gists, public_r
 	<div class="userInfo color-gray1">Member since: ${created_at}</div>
 	<a class="goToProfile color-gray2" href="${html_url}">View user profile on GitHub</a>`;
 	document.querySelector('body').appendChild(profile);
+	document.querySelector('.remove-record').addEventListener('click', removeRecord);
+}
+
+
+
+function removeRecord() {
+	this.parentElement.remove();
+
+	// removeItem.forEach(function (e) {
+	// 	e.addEventListener('click', function () {
+	// 		this.parentElement.remove();
+	// 	})
+	// });
 }
 
 function userNotFound(error, userName) {
@@ -54,5 +70,5 @@ function userNotFound(error, userName) {
 	setTimeout(() => {
 		let message = document.querySelector('.notFound');
 		message.remove();
-	}, 3000);
+	}, 15000);
 }

@@ -84,8 +84,8 @@ select {
 		--width: 95vw;
 	}
 	.userProfile {
-		grid-template-columns: 1fr auto;
-		grid-auto-rows: auto auto auto;
+		grid-template-columns: 5fr 4fr;
+		grid-auto-rows: auto;
 
 		.photo {
 			min-height: 50vw;
