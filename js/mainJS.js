@@ -11,9 +11,9 @@ document.querySelector('form').addEventListener('submit', e => {
 
 	getUser(userName)
 		.then(userData => {
-			writeProfile(userData);
 			console.log(userData);
-			if (userData.message === "Not Found") return Error;
+			if (userData.message === "Not Found") return userNotFound(userData.message, userName);
+			writeProfile(userData);
 		})
 		.catch(error => userNotFound(error, userName));
 
@@ -56,5 +56,5 @@ function userNotFound(error, userName) {
 	setTimeout(() => {
 		let message = document.querySelector('.notFound');
 		message.remove();
-	}, 1500);
+	}, 3000);
 }
