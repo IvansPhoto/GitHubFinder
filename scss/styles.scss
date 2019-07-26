@@ -1,0 +1,97 @@
+:root {
+	font-size: 19px;
+	--colorB1: hsla(180, 15%, 10%, 1);
+	--colorB2: hsla(180, 15%, 25%, 1);
+	--colorB3: hsla(180, 15%, 35%, 1);
+	--colorF1: hsla(180, 15%, 55%, 1);
+	--colorF2: hsla(180, 15%, 80%, 1);
+	--borderRadius: 0;
+	--width: 60rem;
+}
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+input,
+button {
+	all: unset;
+	text-align: center;
+}
+
+body {
+	font-family: Helvetica, Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--colorB1);
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 800;
+	margin: 1.5rem 0;
+}
+
+h2 {
+	font-size: 1.75rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin: 1rem 0 0.3rem 0;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+.color-gray1 {
+	background-color: var(--colorB2);
+	color: var(--colorF1);
+}
+
+.color-gray2 {
+	background-color: var(--colorB3);
+	color: var(--colorF2);
+}
+
+.border-radius {
+	border-radius: var(--borderRadius);
+}
+
+input,
+label,
+button,
+select {
+	font-size: 1.5rem;
+	padding: 0.5rem;
+	margin: 0.15rem 0;
+}
+
+@import 'userProfile';
+
+@media (orientation: portrait) {
+	:root {
+		font-size: 30px;
+		--width: 31.5rem;
+	}
+	.userProfile {
+		grid-template-columns: 1fr;
+		grid-auto-rows: auto auto auto;
+	}
+	.photo {
+		height: 30rem;
+		grid-column: 1 / 3;
+
+	}
+	.goToProfile {
+		grid-column: 1 / 3;
+	}
+}

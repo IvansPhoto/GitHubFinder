@@ -1,0 +1,97 @@
+header {
+	width: 100vw;
+	height: 3rem;
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+	background-color: var(--colorB3);
+	color: var(--colorF2);
+}
+
+form {
+	width: var(--width);
+	display: grid;
+	grid-template-columns: 2fr 5fr;
+	gap: 0.3rem;
+
+	button {
+		grid-column: span 2;
+		text-align: center;
+	}
+}
+
+.userProfile {
+	width: var(--width);
+	margin: 2rem 0;
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: 2fr 5fr;
+	border-radius: var(--borderRadius);
+
+	.photo {
+		//background-image: url('https://avatars1.githubusercontent.com/u/50179458?v=4');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: var(--borderRadius);
+	}
+
+	.userDescription {
+		display: grid;
+		gap: 0.5rem;
+
+		.userStatsAll {
+			display: grid;
+			grid-template-columns: auto auto auto auto;
+			gap: var(--borderRadius);
+			//display: flex;
+			//flex-wrap: wrap;
+			//align-items: center;
+			//justify-content: space-around;
+			border-radius: var(--borderRadius);
+
+			.userStat {
+				margin-right: auto;
+				border-radius: var(--borderRadius);
+				padding: 0.5em;
+			}
+		}
+
+		.userInfo {
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			border-radius: var(--borderRadius);
+			padding: 0.5em;
+		}
+	}
+
+	.goToProfile {
+		grid-column: span 2;
+		padding: 0.5em;
+		text-align: center;
+		border-radius: var(--borderRadius);
+		text-decoration: none;
+	}
+}
+
+.notFound {
+	width: var(--width);
+	padding: 5rem 0;
+	font-size: 3rem;
+	text-align: center;
+}
+
+span {
+	color: var(--colorF2);
+}
+
+span:before {
+	content: ' ';
+}
+
+span:after {
+	content: ' ';
+}
