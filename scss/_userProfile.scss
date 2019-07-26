@@ -28,48 +28,51 @@ form {
 	display: grid;
 	gap: 0.5rem;
 	grid-template-columns: 2fr 5fr;
+	grid-template-rows: repeat(6, auto);
 	border-radius: var(--borderRadius);
 
+
 	.photo {
+		grid-column: span 1;
+		grid-row: span 6;
 		//background-image: url('https://avatars1.githubusercontent.com/u/50179458?v=4');
-		background-size: cover;
+		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
 		border-radius: var(--borderRadius);
 	}
 
-	.userDescription {
+	.userStatsAll {
 		display: grid;
-		gap: 0.5rem;
+		grid-template-columns: repeat(4, auto);
+		gap: var(--borderRadius);
+		justify-content: space-between;
+		//display: flex;
+		//flex-wrap: wrap;
+		//align-items: center;
+		//justify-content: space-around;
+		border-radius: var(--borderRadius);
 
-		.userStatsAll {
-			display: grid;
-			grid-template-columns: auto auto auto auto;
-			gap: var(--borderRadius);
-			//display: flex;
-			//flex-wrap: wrap;
-			//align-items: center;
-			//justify-content: space-around;
-			border-radius: var(--borderRadius);
-
-			.userStat {
-				margin-right: auto;
-				border-radius: var(--borderRadius);
-				padding: 0.5em;
-			}
-		}
-
-		.userInfo {
-			display: flex;
-			align-items: center;
-			justify-content: start;
+		.userStat {
 			border-radius: var(--borderRadius);
 			padding: 0.5em;
+			display: flex;
+			align-items: center;
 		}
 	}
 
+	.userInfo {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		border-radius: var(--borderRadius);
+		padding: 0.5em;
+	}
+
+
 	.goToProfile {
 		grid-column: span 2;
+		grid-row: span 1;
 		padding: 0.5em;
 		text-align: center;
 		border-radius: var(--borderRadius);

@@ -11,7 +11,6 @@ document.querySelector('form').addEventListener('submit', e => {
 
 	getUser(userName)
 		.then(userData => {
-			console.log(userData);
 			if (userData.message === "Not Found") return userNotFound(userData.message, userName);
 			writeProfile(userData);
 		})
@@ -29,21 +28,20 @@ function writeProfile({name, login, avatar_url, html_url, public_gists, public_r
 	if (company === null) company = 'No company';
 	let profile = document.createElement('div');
 	profile.classList.add('userProfile');
-	profile.innerHTML = `<div class="photo" style="background-image: url(${avatar_url})"></div>
-						<div class="userDescription">
-						\t<div class="userStatsAll">
-						\t\t<div class="userStat color-gray2">Public repos: ${public_repos}</div>
-						\t\t<div class="userStat color-gray2">Public gists: ${public_gists}</div>
-						\t\t<div class="userStat color-gray2">Followers: ${followers}</div>
-						\t\t<div class="userStat color-gray2">Following: ${following}</div>
-						\t</div>
-						\t<div class="userInfo color-gray1">Name: ${name} and Login: ${login}</div>
-						\t<div class="userInfo color-gray1">Company: ${company}</div>
-						\t<div class="userInfo color-gray1">Web-Site: ${blog}</div>
-						\t<div class="userInfo color-gray1">Location: ${location}</div>
-						\t<div class="userInfo color-gray1">Member since: ${created_at}</div>
-						</div>
-						<a class="goToProfile color-gray2" href="${html_url}">View user profile on GitHub</a>`;
+	profile.innerHTML = `
+	<div class="photo" style="background-image: url(${avatar_url})"></div>
+	<div class="userStatsAll">
+		<div class="userStat color-gray2">Public repos: ${public_repos}</div>
+		<div class="userStat color-gray2">Public gists: ${public_gists}</div>
+		<div class="userStat color-gray2">Followers: ${followers}</div>
+		<div class="userStat color-gray2">Following: ${following}</div>
+	</div>
+	<div class="userInfo color-gray1">Name: ${name} and Login: ${login}</div>
+	<div class="userInfo color-gray1">Company: ${company}</div>
+	<div class="userInfo color-gray1">Web-Site: ${blog}</div>
+	<div class="userInfo color-gray1">Location: ${location}</div>
+	<div class="userInfo color-gray1">Member since: ${created_at}</div>
+	<a class="goToProfile color-gray2" href="${html_url}">View user profile on GitHub</a>`;
 	document.querySelector('body').appendChild(profile);
 }
 
