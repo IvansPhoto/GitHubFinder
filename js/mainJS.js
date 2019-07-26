@@ -45,20 +45,16 @@ function writeProfile({name, login, avatar_url, html_url, public_gists, public_r
 	<div class="userInfo color-gray1">Location: ${location}</div>
 	<div class="userInfo color-gray1">Member since: ${created_at}</div>
 	<a class="goToProfile color-gray2" href="${html_url}">View user profile on GitHub</a>`;
-	document.querySelector('body').appendChild(profile);
-	document.querySelector('.remove-record').addEventListener('click', removeRecord);
+
+	document.querySelector('body').insertBefore(profile, document.querySelector('form').nextSibling);
+
+	document.querySelectorAll('.remove-record').forEach(e => {
+		e.addEventListener('click', removeRecord)
+	});
 }
-
-
 
 function removeRecord() {
 	this.parentElement.remove();
-
-	// removeItem.forEach(function (e) {
-	// 	e.addEventListener('click', function () {
-	// 		this.parentElement.remove();
-	// 	})
-	// });
 }
 
 function userNotFound(error, userName) {
