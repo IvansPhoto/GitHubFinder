@@ -5,7 +5,7 @@ import {querySearchUsers} from './queries'
 const endpoint = 'https://api.github.com/graphql'
 
 // Getting an access key from LS.
-let access = localStorage.getItem('access')
+var access = localStorage.getItem('access')
 
 // Checking LS for presence of an access key.
 if (access === null || undefined || ``) {
@@ -24,7 +24,7 @@ document.getElementById('Form-AccessKey').addEventListener('submit', e => {
 // A GraphQl request function.
 async function GitHubGraphQL(query, variables) {
 	const graphQLClient = new GraphQLClient(endpoint, {
-		headers: {authorization: 'bearer 904cd11025ab38e9ea13a86da4ae042075ccb37d'},
+		headers: {authorization: `bearer ${access}`},
 	})
 	return await graphQLClient.request(query, variables)
 }
@@ -33,7 +33,7 @@ async function GitHubGraphQL(query, variables) {
 document.getElementById('Form-UserByLogin').addEventListener('submit', e => {
 	const login = document.getElementById('UserByLogin').value
 	let variables = {login: `${login}`}
-	GitHubGraphQL(queryProfileUser, variables)
+    GitHubGraphQL(queryProfileUser, variables)
 		.then(data => console.log(JSON.stringify(data, undefined, 2)))
 		.catch(error => console.error(error))
 	e.preventDefault()
@@ -63,7 +63,6 @@ tabs.forEach(Element => {
 		forms.forEach(Element => {
 			if (Element.id.replace('Form-', '') === this.id.replace('Tab-', '')) {
 				Element.classList.add('active')
-				console.log('contain')
 			}
 		})
 	})

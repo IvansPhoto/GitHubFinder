@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2129a4c7-0d9e-4a80-ba15-9fa81030530d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/queries.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/request.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/_detailProfile.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/_nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpackLocal.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colors.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/mainJS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/request.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/_userProfile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_userProfile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/user.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +121,7 @@
       <workItem from="1564646957124" duration="15539000" />
       <workItem from="1564745243472" duration="15237000" />
       <workItem from="1564814616687" duration="1448000" />
-      <workItem from="1564930549633" duration="11290000" />
+      <workItem from="1564930549633" duration="12108000" />
     </task>
     <task id="LOCAL-00001" summary="Added form">
       <created>1563548958728</created>
