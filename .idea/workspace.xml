@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/user.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +120,7 @@
       <workItem from="1564646957124" duration="15539000" />
       <workItem from="1564745243472" duration="15237000" />
       <workItem from="1564814616687" duration="1448000" />
-      <workItem from="1564930549633" duration="12108000" />
+      <workItem from="1564930549633" duration="13099000" />
     </task>
     <task id="LOCAL-00001" summary="Added form">
       <created>1563548958728</created>

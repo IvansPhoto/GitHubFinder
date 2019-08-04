@@ -33,7 +33,7 @@ async function GitHubGraphQL(query, variables) {
 document.getElementById('Form-UserByLogin').addEventListener('submit', e => {
 	const login = document.getElementById('UserByLogin').value
 	let variables = {login: `${login}`}
-    GitHubGraphQL(queryProfileUser, variables)
+	GitHubGraphQL(queryProfileUser, variables)
 		.then(data => console.log(JSON.stringify(data, undefined, 2)))
 		.catch(error => console.error(error))
 	e.preventDefault()
@@ -58,12 +58,10 @@ tabs.forEach(Element => {
 	Element.addEventListener('click', function () {
 		tabs.forEach(element => element.classList.remove('active'))
 		forms.forEach(element => element.classList.remove('active'))
-		this.classList.add('active')
 
+		this.classList.add('active')
 		forms.forEach(Element => {
-			if (Element.id.replace('Form-', '') === this.id.replace('Tab-', '')) {
-				Element.classList.add('active')
-			}
+			if (Element.id.replace('Form-', '') === this.id.replace('Tab-', '')) Element.classList.add('active')
 		})
 	})
 })
