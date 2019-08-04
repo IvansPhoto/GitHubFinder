@@ -1,0 +1,123 @@
+:root {
+    font-size: 19px;
+
+    //--colorB1: hsla(195, 20%, 14%, 1);
+    //--colorB2: hsla(199, 60%, 60%, 1);
+    //--colorB3: hsla(210, 48%, 74%, 1);
+    //--colorF1: hsla(21, 81%, 67%, 1);
+    --colorB0: hsla(0, 0%, 14%, 1);
+    --colorB1: hsla(195, 20%, 14%, 1);
+    --colorB2: hsla(199, 60%, 60%, 1);
+    --colorB3: hsla(210, 48%, 74%, 1);
+    --colorF1: hsla(21, 81%, 67%, 1);
+
+    --colorF2: hsla(200, 30%, 17%, 1);
+    --borderRadius: 0;
+    --width: 75vw;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+input,
+button {
+    all: unset;
+    text-align: center;
+}
+
+body {
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--colorB0);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1.5rem 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 1rem 0 0.3rem 0;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+.color-gray1 {
+    //box-shadow: 0 0 0.25rem 0.15rem var(--colorB2);
+    //background-color: var(--colorF2);
+    color: var(--colorB2);
+}
+
+.color-gray2 {
+    //box-shadow: 0 0 0.25rem 0.15rem var(--colorF2);
+    background-color: var(--colorB0);
+    color: var(--colorF1);
+}
+
+.border-radius {
+    border-radius: var(--borderRadius);
+}
+
+input,
+label,
+button,
+select {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0.15rem 0;
+}
+
+@import 'userProfile';
+@import 'detailProfile';
+@import 'nav';
+
+@media (orientation: portrait) {
+    :root {
+        font-size: 30px;
+        --width: 95vw;
+    }
+    .userProfile {
+        grid-template-columns: 5fr 4fr;
+        grid-auto-rows: auto;
+
+        .photo {
+            min-height: 50vw;
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .userStatsAll {
+            grid-column: span 1;
+            grid-row: span 1;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        .userInfo {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .goToProfile {
+            grid-column: span 2;
+        }
+    }
+}

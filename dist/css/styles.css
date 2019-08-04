@@ -1,10 +1,11 @@
 :root {
   font-size: 19px;
-  --colorB1: hsla(180, 15%, 10%, 1);
-  --colorB2: hsla(200, 25%, 25%, 1);
-  --colorB3: hsla(200, 25%, 35%, 1);
-  --colorF1: hsla(21, 75%, 60%, 1);
-  --colorF2: hsla(21, 55%, 75%, 1);
+  --colorB0: hsla(0, 0%, 14%, 1);
+  --colorB1: hsla(195, 20%, 14%, 1);
+  --colorB2: hsla(199, 60%, 60%, 1);
+  --colorB3: hsla(210, 48%, 74%, 1);
+  --colorF1: hsla(21, 81%, 67%, 1);
+  --colorF2: hsla(200, 30%, 17%, 1);
   --borderRadius: 0;
   --width: 75vw;
 }
@@ -33,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--colorB1);
+  background-color: var(--colorB0);
 }
 
 h1 {
@@ -54,13 +55,12 @@ h3 {
 }
 
 .color-gray1 {
-  background-color: var(--colorB2);
-  color: var(--colorF1);
+  color: var(--colorB2);
 }
 
 .color-gray2 {
-  background-color: var(--colorB3);
-  color: var(--colorF2);
+  background-color: var(--colorB0);
+  color: var(--colorF1);
 }
 
 .border-radius {
@@ -83,25 +83,34 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-  background-color: var(--colorB3);
-  color: var(--colorF2);
+  background-color: var(--colorB1);
+  color: var(--colorF1);
 }
 
 form {
   width: var(--width);
-  display: grid;
+  display: none;
   grid-template-columns: 3fr 5fr;
-  gap: 0.3rem;
+}
+form.active {
+  display: grid;
 }
 form label {
   text-align: center;
   text-transform: uppercase;
 }
 form button {
-  grid-column: span 2;
+  grid-column: span 1;
   text-align: center;
   text-transform: uppercase;
+}
+form .removeAllRecords {
+  grid-column: span 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0.15rem 0;
 }
 
 .userProfile {
@@ -112,6 +121,7 @@ form button {
   grid-template-columns: 2fr 5fr;
   grid-template-rows: repeat(6, auto);
   border-radius: var(--borderRadius);
+  box-shadow: 0 0 0.15rem 0.15rem var(--colorB1);
 }
 .userProfile .remove-record {
   grid-column: span 2;
@@ -165,7 +175,8 @@ form button {
 }
 
 span {
-  color: var(--colorF2);
+  color: var(--colorF1);
+  margin: 0 0.25em;
 }
 
 span:before {
@@ -174,6 +185,67 @@ span:before {
 
 span:after {
   content: " ";
+}
+
+#Wrap {
+  position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(17, 59, 59, 0.25);
+}
+#Wrap #DetailProfile {
+  position: relative;
+  z-index: auto;
+  width: 78vw;
+  min-height: 100vh;
+  background-color: var(--colorF2);
+  padding: 1.5rem 1.5rem;
+}
+
+nav {
+  width: 100vw;
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  grid-template-columns: repeat(3, auto);
+  background-color: var(--colorB1);
+}
+nav .tab {
+  font-size: 1.5rem;
+  padding: 0.5rem 1em;
+  color: var(--colorB3);
+  background-color: var(--colorB1);
+}
+nav .tab:hover {
+  color: var(--colorF1);
+  transition: 300ms;
+  background-color: var(--colorB0);
+}
+nav .tab.active {
+  color: var(--colorF1);
+  background-color: var(--colorB0);
+}
+
+.foldersPart {
+  height: 1rem;
+  grid-column: span 3;
+  background-color: var(--colorB0);
+}
+
+#Tab-UserSearcher {
+  clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
+}
+
+#Tab-UserByLogin {
+  clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
+}
+
+#Tab-AccessKey {
+  clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
 }
 
 @media (orientation: portrait) {

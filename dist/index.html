@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>GitHub User Finder</title>
+	<link rel="stylesheet" href="css/styles.css"/>
+	<script defer src="main.js"></script>
+
+</head>
+<body>
+<header>GitHub User Finder</header>
+<nav>
+	<div class="tab" id="Tab-UserSearcher">Search users</div>
+	<div class="tab active" id="Tab-UserByLogin">Find a user by login</div>
+	<div class="tab" id="Tab-AccessKey">Access key</div>
+</nav>
+	<div class="foldersPart"></div>
+
+<form class="" action="#" method="post" enctype="multipart/form-data" id="Form-UserSearcher">
+	<label class="border-radius color-gray1" for="UserSearcher">User name</label>
+	<input class="border-radius color-gray1" type="text" name="UserSearcher" id="UserSearcher" placeholder="User name" required/>
+	<div class="removeAllRecords color-gray1">Remove All Records</div>
+	<button class="border-radius color-gray1" type="submit">Find all users</button>
+</form>
+
+<form class="active" action="#" method="post" enctype="multipart/form-data" id="Form-UserByLogin">
+	<label class="border-radius color-gray1" for="UserByLogin">The user login</label>
+	<input class="border-radius color-gray1" type="text" name="UserByLogin" id="UserByLogin" placeholder="The user's login" required/>
+	<div class="removeAllRecords color-gray1">Clear the list</div>
+	<button class="border-radius color-gray1" type="submit">Find the user</button>
+</form>
+
+<form class="" action="#" method="post" enctype="multipart/form-data" id="Form-AccessKey">
+	<label class="border-radius color-gray1" for="AccessKey">Access Key</label>
+	<input class="border-radius color-gray1" type="password" name="AccessKey" id="AccessKey" placeholder="Access Key" required/>
+	<div class="removeAllRecords color-gray1">Remove AKey from LS</div>
+	<button class="border-radius color-gray1" type="submit">Send Access Key</button>
+</form>
+
+</body>
+</html>
