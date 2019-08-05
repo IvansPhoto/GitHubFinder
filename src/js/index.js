@@ -3,21 +3,33 @@ import {queryProfileUser} from './queries'
 import {querySearchUsers} from './queries'
 
 const endpoint = 'https://api.github.com/graphql'
+const headerAdding = document.querySelector('header span')
+const header = document.querySelector('header')
 
 // Getting an access key from LS.
-var access = localStorage.getItem('access')
+let access = localStorage.getItem('access')
+checkAK()
 
 // Checking LS for presence of an access key.
-if (access === null || undefined || ``) {
-	console.log('Insert an access key for access search!')
-} else {
-	console.log('The access key has been loaded successfully.')
+function checkAK() {
+	if (access === null || undefined || ``) {
+		console.log('Insert an access key for access search!')
+		headerAdding.innerText = `The access key not found.`
+		headerAdding.classList.add('red')
+		header.classList.add('gray')
+	} else {
+		headerAdding.classList.remove('red')
+		header.classList.remove('gray')
+		headerAdding.innerText = `The access key is loaded.`
+		console.log('The access key has been loaded successfully.')
+	}
 }
 
 // Input an access key.
 document.getElementById('Form-AccessKey').addEventListener('submit', e => {
 	access = document.getElementById('AccessKey').value
 	localStorage.setItem('access', `${access}`)
+	checkAK()
 	e.preventDefault()
 })
 
@@ -61,7 +73,7 @@ tabs.forEach(Element => {
 
 		this.classList.add('active')
 		forms.forEach(Element => {
-			if (Element.id.replace('Form-', '') === this.id.replace('Tab-', '')) Element.classList.add('active')
+			if (Element.id.replace(/^([\W\w]{5})/i, '') === this.id.replace(/^([\W\w]{5})/i, '')) Element.classList.add('active')
 		})
 	})
 })

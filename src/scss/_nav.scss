@@ -1,47 +1,64 @@
-nav {
-	width: 100vw;
-	display: grid;
-	align-items: center;
-	justify-content: space-around;
-	grid-template-columns: repeat(3, auto);
-	background-color: var(--colorB1);
-
-	.tab {
-		font-size: 1.5rem;
-		padding: 0.5rem 1em;
-		color: var(--colorB3);
-		background-color: var(--colorB1);
-
-		&:hover {
-			color: var(--colorF1);
-			transition: 300ms;
-			background-color: var(--colorB0);
-		}
-
-		&.active {
-			color: var(--colorF1);
-			background-color: var(--colorB0);
-		}
+header {
+    width: 100vw;
+    height: 3rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorB1);
+    color: var(--colorF1);
+	&.gray {
+		color: hsl(0,0%,50%) !important;
 	}
+    span {
+        color: var(--colorB3);
+	    &.red {
+		    color: red !important;
+	    }
+    }
+}
 
+nav {
+    width: 100vw;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    grid-template-columns: repeat(3, auto);
+    background-color: var(--colorB1);
+
+    .tab {
+        font-size: 1.5rem;
+        padding: 0.5rem 1em;
+        color: var(--colorB3);
+        background-color: var(--colorB1);
+
+        &:hover {
+            color: var(--colorF1);
+            transition: 300ms;
+            background-color: var(--colorB0);
+        }
+
+        &.active {
+            color: var(--colorF1);
+            background-color: var(--colorB0);
+        }
+    }
 }
 
 .foldersPart {
-	height: 1rem;
-	grid-column: span 3;
-	background-color: var(--colorB0);
-
+    height: 1rem;
+    grid-column: span 3;
+    background-color: var(--colorB0);
 }
 
-
-#Tab-UserSearcher {
-	clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
+#Tabs-UserSearcher {
+    clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
 
-#Tab-UserByLogin {
-	clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
+#Tabs-UserByLogin {
+    clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
 
-#Tab-AccessKey {
-	clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
+#Tabs-AccessKey {
+    clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
 }

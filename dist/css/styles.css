@@ -76,17 +76,6 @@ select {
   margin: 0.15rem 0;
 }
 
-header {
-  width: 100vw;
-  height: 3rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--colorB1);
-  color: var(--colorF1);
-}
-
 form {
   width: var(--width);
   display: none;
@@ -206,6 +195,26 @@ span:after {
   padding: 1.5rem 1.5rem;
 }
 
+header {
+  width: 100vw;
+  height: 3rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--colorB1);
+  color: var(--colorF1);
+}
+header.gray {
+  color: gray !important;
+}
+header span {
+  color: var(--colorB3);
+}
+header span.red {
+  color: red !important;
+}
+
 nav {
   width: 100vw;
   display: grid;
@@ -236,15 +245,15 @@ nav .tab.active {
   background-color: var(--colorB0);
 }
 
-#Tab-UserSearcher {
+#Tabs-UserSearcher {
   clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
 
-#Tab-UserByLogin {
+#Tabs-UserByLogin {
   clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
 
-#Tab-AccessKey {
+#Tabs-AccessKey {
   clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
 }
 
