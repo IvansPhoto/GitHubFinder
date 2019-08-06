@@ -16,9 +16,13 @@ query userFinder($login: String!) {
 }`;
 
 export const queryProfileUser = `
-    query userProfile($login: String!) {
-	user(login: $login) {
+query userProfile($login: String!) 
+{
+	user(login: $login) 
+	{
 		name
+		login
+		url
 		email
 		company
 		createdAt

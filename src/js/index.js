@@ -1,6 +1,7 @@
 import {GraphQLClient} from 'graphql-request'
 import {queryProfileUser} from './queries'
 import {querySearchUsers} from './queries'
+import {createNewUser} from './createNewUser'
 
 const endpoint = 'https://api.github.com/graphql'
 const headerAdding = document.querySelector('header span')
@@ -9,7 +10,6 @@ const header = document.querySelector('header')
 // Getting an access key from LS.
 let access = localStorage.getItem('access')
 checkAK()
-
 // Checking LS for presence of an access key.
 function checkAK() {
 	if (access === null || undefined || ``) {
@@ -24,7 +24,6 @@ function checkAK() {
 		console.log('The access key has been loaded successfully.')
 	}
 }
-
 // Input an access key.
 document.getElementById('Form-AccessKey').addEventListener('submit', e => {
 	access = document.getElementById('AccessKey').value
@@ -41,22 +40,23 @@ async function GitHubGraphQL(query, variables) {
 	return await graphQLClient.request(query, variables)
 }
 
-// Getting a user login to find the user.
-document.getElementById('Form-UserByLogin').addEventListener('submit', e => {
-	const login = document.getElementById('UserByLogin').value
-	let variables = {login: `${login}`}
-	GitHubGraphQL(queryProfileUser, variables)
-		.then(data => console.log(JSON.stringify(data, undefined, 2)))
-		.catch(error => console.error(error))
-	e.preventDefault()
-})
 
 // Getting part of a user login for searching a user.
 document.getElementById('Form-UserSearcher').addEventListener('submit', e => {
 	const login = document.getElementById('UserSearcher').value
 	let variables = {login: `${login}`}
 	GitHubGraphQL(querySearchUsers, variables)
-		.then(data => console.log(JSON.stringify(data, undefined, 2)))
+		.then(data => console.log(data))
+		.catch(error => console.error(error))
+	e.preventDefault()
+})
+
+// Getting a user login to find the user.
+document.getElementById('Form-UserByLogin').addEventListener('submit', e => {
+	const login = document.getElementById('UserByLogin').value
+	let variables = {login: `${login}`}
+	GitHubGraphQL(queryProfileUser, variables)
+		.then(data => createNewUser(data.user))
 		.catch(error => console.error(error))
 	e.preventDefault()
 })

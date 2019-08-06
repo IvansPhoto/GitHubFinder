@@ -1,7 +1,7 @@
 :root {
   font-size: 19px;
   --colorB0: hsla(0, 0%, 14%, 1);
-  --colorB1: hsla(195, 20%, 14%, 1);
+  --colorB1: hsla(195, 25%, 15%, 1);
   --colorB2: hsla(199, 60%, 60%, 1);
   --colorB3: hsla(210, 48%, 74%, 1);
   --colorF1: hsla(21, 81%, 67%, 1);
@@ -73,7 +73,6 @@ button,
 select {
   font-size: 1.5rem;
   padding: 0.5rem;
-  margin: 0.15rem 0;
 }
 
 form {
@@ -83,6 +82,9 @@ form {
 }
 form.active {
   display: grid;
+}
+form > * {
+  border-bottom: 0.1rem solid var(--colorF2);
 }
 form label {
   text-align: center;
@@ -99,7 +101,6 @@ form .removeAllRecords {
   text-transform: uppercase;
   font-size: 1.5rem;
   padding: 0.5rem;
-  margin: 0.15rem 0;
 }
 
 .userProfile {
@@ -110,7 +111,6 @@ form .removeAllRecords {
   grid-template-columns: 2fr 5fr;
   grid-template-rows: repeat(6, auto);
   border-radius: var(--borderRadius);
-  box-shadow: 0 0 0.15rem 0.15rem var(--colorB1);
 }
 .userProfile .remove-record {
   grid-column: span 2;
@@ -118,6 +118,7 @@ form .removeAllRecords {
   padding: 0.5em;
   text-align: center;
   border-radius: var(--borderRadius);
+  border-bottom: 0.1rem solid var(--colorF2);
 }
 .userProfile .photo {
   grid-column: span 1;
@@ -132,6 +133,7 @@ form .removeAllRecords {
   grid-template-columns: repeat(4, auto);
   gap: var(--borderRadius);
   justify-content: space-between;
+  border-bottom: 0.1rem solid var(--colorF2);
   border-radius: var(--borderRadius);
 }
 .userProfile .userStatsAll .userStat {
@@ -146,6 +148,7 @@ form .removeAllRecords {
   justify-content: start;
   border-radius: var(--borderRadius);
   padding: 0.5em;
+  border-bottom: 0.1rem solid var(--colorF2);
 }
 .userProfile .goToProfile {
   grid-column: span 2;
@@ -195,7 +198,8 @@ span:after {
   padding: 1.5rem 1.5rem;
 }
 
-header {
+header, footer {
+  max-width: 100%;
   width: 100vw;
   height: 3rem;
   font-size: 1.5rem;
@@ -205,14 +209,19 @@ header {
   background-color: var(--colorB1);
   color: var(--colorF1);
 }
-header.gray {
+header.gray, footer.gray {
   color: gray !important;
 }
-header span {
+header span, footer span {
   color: var(--colorB3);
 }
-header span.red {
+header span.red, footer span.red {
   color: red !important;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
 }
 
 nav {

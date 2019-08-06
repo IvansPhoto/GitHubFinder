@@ -6,7 +6,7 @@
     //--colorB3: hsla(210, 48%, 74%, 1);
     //--colorF1: hsla(21, 81%, 67%, 1);
     --colorB0: hsla(0, 0%, 14%, 1);
-    --colorB1: hsla(195, 20%, 14%, 1);
+    --colorB1: hsla(195, 25%, 15%, 1);
     --colorB2: hsla(199, 60%, 60%, 1);
     --colorB3: hsla(210, 48%, 74%, 1);
     --colorF1: hsla(21, 81%, 67%, 1);
@@ -82,7 +82,7 @@ button,
 select {
     font-size: 1.5rem;
     padding: 0.5rem;
-    margin: 0.15rem 0;
+    //margin: 0.15rem 0;
 }
 
 @import 'userProfile';
