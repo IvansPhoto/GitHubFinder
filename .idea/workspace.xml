@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2129a4c7-0d9e-4a80-ba15-9fa81030530d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/createNewUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/queries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_nav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_userProfile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_userProfile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/styles.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,6 +125,7 @@
       <workItem from="1564930549633" duration="13283000" />
       <workItem from="1564987246100" duration="13833000" />
       <workItem from="1565081898842" duration="7575000" />
+      <workItem from="1565175314830" duration="2104000" />
     </task>
     <task id="LOCAL-00001" summary="Added form">
       <created>1563548958728</created>
