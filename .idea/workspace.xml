@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2129a4c7-0d9e-4a80-ba15-9fa81030530d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_nav.scss" afterDir="false" />
-    </list>
+    <list default="true" id="2129a4c7-0d9e-4a80-ba15-9fa81030530d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +119,7 @@
       <workItem from="1564930549633" duration="13283000" />
       <workItem from="1564987246100" duration="13833000" />
       <workItem from="1565081898842" duration="7575000" />
-      <workItem from="1565175314830" duration="2104000" />
+      <workItem from="1565175314830" duration="2172000" />
     </task>
     <task id="LOCAL-00001" summary="Added form">
       <created>1563548958728</created>
@@ -183,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565015713312</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Starting new layout.">
+      <created>1565182723893</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565182723893</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +214,7 @@
     <MESSAGE value="Adding a function to remove an element." />
     <MESSAGE value="Complete a function to remove an element." />
     <MESSAGE value="Inform about an access key." />
-    <option name="LAST_COMMIT_MESSAGE" value="Inform about an access key." />
+    <MESSAGE value="Starting new layout." />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting new layout." />
   </component>
 </project>
