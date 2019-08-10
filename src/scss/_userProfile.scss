@@ -1,13 +1,19 @@
+.bigDiv {
+	display: none;
+	min-height: 85vh;
+	&.active {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		flex-direction: column;
+	}
+}
 
 form {
 	width: var(--width);
-	display: none;
+	display: grid;
 	grid-template-columns: 3fr 5fr;
 	//gap: 0.3rem;
-	&.active {
-		display: grid;
-	}
-
 	> * {
         border-bottom: 0.1rem solid var(--colorF2);
 	}
@@ -99,6 +105,10 @@ form {
 		border-radius: var(--borderRadius);
 		text-decoration: none;
 	}
+}
+
+.searchResult {
+	display: grid;
 }
 
 .notFound {

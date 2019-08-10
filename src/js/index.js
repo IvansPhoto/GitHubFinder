@@ -10,6 +10,7 @@ const header = document.querySelector('header')
 // Getting an access key from LS.
 let access = localStorage.getItem('access')
 checkAK()
+
 // Checking LS for presence of an access key.
 function checkAK() {
 	if (access === null || undefined || ``) {
@@ -24,6 +25,7 @@ function checkAK() {
 		console.log('The access key has been loaded successfully.')
 	}
 }
+
 // Input an access key.
 document.getElementById('Form-AccessKey').addEventListener('submit', e => {
 	access = document.getElementById('AccessKey').value
@@ -46,10 +48,42 @@ document.getElementById('Form-UserSearcher').addEventListener('submit', e => {
 	const login = document.getElementById('UserSearcher').value
 	let variables = {login: `${login}`}
 	GitHubGraphQL(querySearchUsers, variables)
-		.then(data => console.log(data))
+		.then(data => userSearch(data.search))
 		.catch(error => console.error(error))
 	e.preventDefault()
 })
+function userSearch(data) {
+	// let loginMatches = data.edges.filter(item => {
+	// 	return item.textMatches.forEach(subItem => {
+	// 		subItem.filter(subSubItem => {
+	// 			return subSubItem.property === 'login'
+	// 		})
+	// 	})
+	//
+	// })
+
+	data.edges.forEach(item => {
+		item.textMatches.forEach(subItem => {
+			if (subItem.property === 'login') {
+				console.log(subItem)
+				let variables = {login: `${subItem.fragment}`}
+				GitHubGraphQL(queryProfileUser, variables)
+					.then(data => createNewUser(data.user))
+					.catch(error => console.error(error))
+			}
+		})
+	})
+
+	// console.log(data.edges)
+	// console.log(data.edges[0].textMatches[0].property)
+	// console.log(loginMatches)
+
+	// let searchResult = document.createElement('div')
+	// searchResult.classList.add('searchResult')
+	// searchResult.innerText = `${data.edges}`
+	// insertDiv(searchResult)
+}
+
 
 // Getting a user login to find the user.
 document.getElementById('Form-UserByLogin').addEventListener('submit', e => {
@@ -63,16 +97,17 @@ document.getElementById('Form-UserByLogin').addEventListener('submit', e => {
 
 // Make a tab active.
 let tabs = document.querySelectorAll('.tab')
-let forms = document.querySelectorAll('form')
+let bigDivs = document.querySelectorAll('.bigDiv')
 
 // Switching tabs and forms
 tabs.forEach(Element => {
 	Element.addEventListener('click', function () {
 		tabs.forEach(element => element.classList.remove('active'))
-		forms.forEach(element => element.classList.remove('active'))
+		bigDivs.forEach(element => element.classList.remove('active'))
 
 		this.classList.add('active')
-		forms.forEach(Element => {
+
+		bigDivs.forEach(Element => {
 			if (Element.id.replace(/^([\W\w]{5})/i, '') === this.id.replace(/^([\W\w]{5})/i, '')) Element.classList.add('active')
 		})
 	})

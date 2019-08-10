@@ -56,14 +56,14 @@ nav {
     background-color: var(--colorB0);
 }
 
-#Tabs-UserSearcher {
+#Tab-UserSearcher {
     clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
 
-#Tabs-UserByLogin {
+#Tab-UserByLogin {
     clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
 
-#Tabs-AccessKey {
+#Tab-AccessKey {
     clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
 }
