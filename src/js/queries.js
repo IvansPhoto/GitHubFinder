@@ -15,10 +15,9 @@ query userFinder($login: String!) {
 	}
 }`;
 
-export const queryProfileUser = `
-query userProfile($login: String!) 
-{
-	user(login: $login) 
+export const queryProfileUser = (login) => `
+query userProfile {
+	user(login: ${login}) 
 	{
 		name
 		login
@@ -56,5 +55,20 @@ query userProfile($login: String!)
 		following {
 			totalCount
 		}
+	}
+}`;
+
+export const queryShortProfileUser = `
+query userProfile($login: String!) 
+{
+	user(login: $login) 
+	{
+		url
+		login
+		name
+		company
+		location
+		avatarUrl
+		websiteUrl
 	}
 }`;

@@ -11,8 +11,7 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1,
@@ -29,20 +28,12 @@ button {
 
 body {
   font-family: Helvetica, Arial, Helvetica, sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--colorB0);
 }
 
@@ -86,133 +77,75 @@ select {
 
 .bigDiv {
   display: none;
-  min-height: 85vh;
+  min-height: calc(100vh - 9rem);
 }
-
 .bigDiv.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
 }
 
 form {
   width: var(--width);
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 3fr 5fr;
-      grid-template-columns: 3fr 5fr;
+  grid-template-columns: 3fr 5fr;
 }
-
 form > * {
   border-bottom: 0.1rem solid var(--colorF2);
 }
-
 form label {
   text-align: center;
   text-transform: uppercase;
 }
-
 form button {
-  grid-column: span 1;
+  grid-column: span 2;
   text-align: center;
   text-transform: uppercase;
-}
-
-form .removeAllRecords {
-  grid-column: span 1;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  padding: 0.5rem;
 }
 
 .userProfile {
   width: var(--width);
   margin: 2rem 0;
-  display: -ms-grid;
   display: grid;
   gap: 0.5rem;
-  -ms-grid-columns: 2fr 5fr;
-      grid-template-columns: 2fr 5fr;
-  -ms-grid-rows: (auto)[6];
-      grid-template-rows: repeat(6, auto);
-  border-radius: var(--borderRadius);
+  grid-template-columns: 2fr 5fr;
+  grid-template-rows: repeat(6, auto);
 }
-
-.userProfile .remove-record {
-  grid-column: span 2;
-  grid-row: span 1;
+.userProfile .record {
   padding: 0.5em;
-  text-align: center;
-  border-radius: var(--borderRadius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 0.1rem solid var(--colorF2);
+  text-transform: uppercase;
+  background-color: var(--colorB1);
+  color: var(--colorF1);
 }
-
+.userProfile .record .remove:hover {
+  color: var(--colorB3);
+}
 .userProfile .photo {
   grid-column: span 1;
   grid-row: span 6;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: var(--borderRadius);
 }
-
-.userProfile .userStatsAll {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[4];
-      grid-template-columns: repeat(4, auto);
-  gap: var(--borderRadius);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  border-bottom: 0.1rem solid var(--colorF2);
-  border-radius: var(--borderRadius);
-}
-
-.userProfile .userStatsAll .userStat {
-  border-radius: var(--borderRadius);
-  padding: 0.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .userProfile .userInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  border-radius: var(--borderRadius);
+  align-items: center;
+  justify-content: start;
   padding: 0.5em;
   border-bottom: 0.1rem solid var(--colorF2);
 }
-
-.userProfile .goToProfile {
-  grid-column: span 2;
-  grid-row: span 1;
-  padding: 0.5em;
-  text-align: center;
-  border-radius: var(--borderRadius);
+.userProfile .userInfo a {
   text-decoration: none;
+  color: inherit;
+}
+
+.searchResult {
+  display: grid;
 }
 
 .notFound {
@@ -228,36 +161,11 @@ span {
 }
 
 span:before {
-  content: ' ';
+  content: " ";
 }
 
 span:after {
-  content: ' ';
-}
-
-#Wrap {
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  left: 0;
-  top: 0;
-  min-height: 100vh;
-  width: 100%;
-  background-color: rgba(17, 59, 59, 0.25);
-}
-
-#Wrap #DetailProfile {
-  position: relative;
-  z-index: auto;
-  width: 78vw;
-  min-height: 100vh;
-  background-color: var(--colorF2);
-  padding: 1.5rem 1.5rem;
+  content: " ";
 }
 
 header, footer {
@@ -265,27 +173,18 @@ header, footer {
   width: 100vw;
   height: 3rem;
   font-size: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: var(--colorB1);
   color: var(--colorF1);
 }
-
 header.gray, footer.gray {
   color: gray !important;
 }
-
 header span, footer span {
   color: var(--colorB3);
 }
-
 header span.red, footer span.red {
   color: red !important;
 }
@@ -296,32 +195,24 @@ footer {
 
 nav {
   width: 100vw;
-  display: -ms-grid;
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: stretch;
+  grid-template-columns: repeat(2, auto);
   background-color: var(--colorB1);
 }
-
 nav .tab {
   font-size: 1.5rem;
   padding: 0.5rem 1em;
   color: var(--colorB3);
   background-color: var(--colorB1);
+  text-align: center;
 }
-
 nav .tab:hover {
   color: var(--colorF1);
-  -webkit-transition: 300ms;
   transition: 300ms;
   background-color: var(--colorB0);
 }
-
 nav .tab.active {
   color: var(--colorF1);
   background-color: var(--colorB0);
@@ -334,18 +225,100 @@ nav .tab.active {
 }
 
 #Tab-UserSearcher {
-  -webkit-clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
 
 #Tab-UserByLogin {
-  -webkit-clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
-          clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
+  clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
 
 #Tab-AccessKey {
-  -webkit-clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
-          clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.extendedProfile {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  grid-template-columns: 2fr 5fr;
+  grid-template-rows: repeat(6, auto);
+  align-content: flex-start;
+  padding-top: 3rem;
+  width: 75vw;
+  margin-left: 25vw;
+  background: var(--colorB0);
+  z-index: 2;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+.extendedProfile .nav-link {
+  grid-column: span 2;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  text-transform: uppercase;
+}
+.extendedProfile .nav-link .backToList {
+  color: var(--colorF1);
+  z-index: 2;
+}
+.extendedProfile .nav-link .goToProfile {
+  text-align: center;
+  text-decoration: none;
+  z-index: inherit;
+}
+.extendedProfile .extendedUserPhoto {
+  grid-column: span 1;
+  grid-row: span 6;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: inherit;
+}
+.extendedProfile .userStatsAll {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: var(--borderRadius);
+  justify-content: space-between;
+  border-bottom: 0.1rem solid var(--colorF2);
+  border-radius: var(--borderRadius);
+  z-index: inherit;
+}
+.extendedProfile .userStatsAll .userStat {
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  z-index: inherit;
+}
+.extendedProfile .profileInfo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0.5em;
+  border-bottom: 0.1rem solid var(--colorF2);
+  z-index: inherit;
+}
+.extendedProfile .profileInfo a {
+  text-decoration: none;
+  color: inherit;
+  z-index: inherit;
 }
 
 @media (orientation: portrait) {
@@ -353,9 +326,9 @@ nav .tab.active {
     font-size: 30px;
     --width: 95vw;
   }
+
   .userProfile {
-    -ms-grid-columns: 5fr 4fr;
-        grid-template-columns: 5fr 4fr;
+    grid-template-columns: 1fr;
     grid-auto-rows: auto;
   }
   .userProfile .photo {
@@ -363,19 +336,10 @@ nav .tab.active {
     grid-column: span 1;
     grid-row: span 1;
   }
-  .userProfile .userStatsAll {
+  .userProfile .userInfo {
     grid-column: span 1;
     grid-row: span 1;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .userProfile .userInfo {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  .userProfile .goToProfile {
-    grid-column: span 2;
   }
 }
+
 /*# sourceMappingURL=styles.css.map */

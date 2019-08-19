@@ -86,8 +86,8 @@ select {
 }
 
 @import 'userProfile';
-@import 'detailProfile';
 @import 'nav';
+@import 'extendedProfile';
 
 @media (orientation: portrait) {
     :root {
@@ -95,7 +95,7 @@ select {
         --width: 95vw;
     }
     .userProfile {
-        grid-template-columns: 5fr 4fr;
+        grid-template-columns: 1fr;
         grid-auto-rows: auto;
 
         .photo {
@@ -104,20 +104,9 @@ select {
             grid-row: span 1;
         }
 
-        .userStatsAll {
+        .userInfo {
             grid-column: span 1;
             grid-row: span 1;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-        }
-
-        .userInfo {
-            grid-column: span 2;
-            grid-row: span 1;
-        }
-
-        .goToProfile {
-            grid-column: span 2;
         }
     }
 }

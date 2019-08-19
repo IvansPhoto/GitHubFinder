@@ -8,42 +8,32 @@
 
 </head>
 <body>
+
 <header><span></span></header>
+
 <nav>
 	<div class="tab active" id="Tab-UserSearcher">Search users</div>
-	<div class="tab" id="Tab-UserByLogin">Find a user</div>
 	<div class="tab" id="Tab-AccessKey">Access key</div>
 </nav>
 
-<!--<div class="foldersPart"></div>-->
-<div id="Div-UserSearcher" class="bigDiv active">
+<div id="userInformation"></div>
+
+<main id="Div-UserSearcher" class="bigDiv active">
 	<form action="#" method="post" enctype="multipart/form-data" id="Form-UserSearcher">
-		<label class="border-radius color-gray1" for="UserSearcher">A user name</label>
-		<input class="border-radius color-gray1" type="text" name="UserSearcher" id="UserSearcher" placeholder="User name" required/>
-		<div class="removeAllRecords color-gray1">Remove All Records</div>
+		<label class="border-radius color-gray1" for="UserSearcher">A user login:</label>
+		<input class="border-radius color-gray1" type="text" name="UserSearcher" id="UserSearcher" placeholder="User login" required/>
 		<button class="border-radius color-gray1" type="submit">Search users</button>
 	</form>
-	<div class="resultList"></div>
-</div>
-
-<div id="Div-UserByLogin" class="bigDiv">
-	<form action="#" method="post" enctype="multipart/form-data" id="Form-UserByLogin">
-		<label class="border-radius color-gray1" for="UserByLogin">The user login</label>
-		<input class="border-radius color-gray1" type="text" name="UserByLogin" id="UserByLogin" placeholder="The user's login" required/>
-		<div class="removeAllRecords color-gray1">Clear the list</div>
-		<button class="border-radius color-gray1" type="submit">Find the user</button>
-	</form>
-	<div class="resultList"></div>
-</div>
+	<div id="ResultList"></div>
+</main>
 
 <div id="Div-AccessKey" class="bigDiv">
 	<form action="#" method="post" enctype="multipart/form-data" id="Form-AccessKey">
-		<label class="border-radius color-gray1" for="AccessKey">Access Key</label>
+		<label class="border-radius color-gray1" for="AccessKey">Access Key:</label>
 		<input class="border-radius color-gray1" type="password" name="AccessKey" id="AccessKey" placeholder="Access Key" required/>
-		<div class="removeAllRecords color-gray1">Remove the key from LS</div>
 		<button class="border-radius color-gray1" type="submit">Send Access Key</button>
+		<button class="remove color-gray1" type="submit">Remove the key from LS</button>
 	</form>
-	<div class="resultList"></div>
 </div>
 
 <footer>GitHub User Finder</footer>

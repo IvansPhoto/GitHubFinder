@@ -27,8 +27,8 @@ nav {
     width: 100vw;
     display: grid;
     align-items: center;
-    justify-content: space-around;
-    grid-template-columns: repeat(3, auto);
+    justify-content: stretch;
+    grid-template-columns: repeat(2, auto);
     background-color: var(--colorB1);
 
     .tab {
@@ -36,6 +36,7 @@ nav {
         padding: 0.5rem 1em;
         color: var(--colorB3);
         background-color: var(--colorB1);
+        text-align: center;
 
         &:hover {
             color: var(--colorF1);

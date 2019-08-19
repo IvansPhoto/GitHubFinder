@@ -33,8 +33,8 @@
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/gitkraken/app-6.0.1/gitkraken.exe" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SCSS&#10;JavaScript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TemplateHTML" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -47,7 +47,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="project" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Ivan\AppData\Roaming\npm\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -123,6 +123,15 @@
       <workItem from="1565291352754" duration="3815000" />
       <workItem from="1565339319524" duration="4901000" />
       <workItem from="1565365173512" duration="8130000" />
+      <workItem from="1565599303111" duration="6492000" />
+      <workItem from="1565692439509" duration="9513000" />
+      <workItem from="1565776149288" duration="2700000" />
+      <workItem from="1565979675332" duration="1730000" />
+      <workItem from="1566103794907" duration="3560000" />
+      <workItem from="1566108881589" duration="4169000" />
+      <workItem from="1566113077029" duration="12729000" />
+      <workItem from="1566208338914" duration="619000" />
+      <workItem from="1566219885979" duration="2484000" />
     </task>
     <task id="LOCAL-00001" summary="Added form">
       <created>1563548958728</created>

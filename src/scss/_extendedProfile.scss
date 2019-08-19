@@ -1,0 +1,96 @@
+.background {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: hsla(0, 0%, 0%, 0.5);
+	z-index: 1;
+}
+
+.extendedProfile {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: grid;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	grid-template-columns: 2fr 5fr;
+	grid-template-rows: repeat(6, auto);
+	align-content: flex-start;
+	padding-top: 3rem;
+	width: 75vw;
+	margin-left: 25vw;
+	background: var(--colorB0);
+	z-index: 2;
+	overflow-y: scroll;
+	overflow-x: auto;
+	//animation-name: fade-in-right;
+	//animation-duration: 500ms;
+	//transition: 300ms ease-in-out;
+
+	.nav-link {
+		grid-column: span 2;
+		height: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		//background-color: var(--colorB1);
+		//color: var(--colorF1);
+		z-index: 2;
+		text-transform: uppercase;
+
+		.backToList {
+			color: var(--colorF1);
+			z-index: 2;
+		}
+
+		.goToProfile {
+			text-align: center;
+			text-decoration: none;
+			z-index: inherit;
+		}
+	}
+	.extendedUserPhoto {
+		grid-column: span 1;
+		grid-row: span 6;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: inherit;
+	}
+
+
+	.userStatsAll {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: var(--borderRadius);
+		justify-content: space-between;
+		border-bottom: 0.1rem solid var(--colorF2);
+		border-radius: var(--borderRadius);
+		z-index: inherit;
+
+		.userStat {
+			padding: 0.5em;
+			display: flex;
+			align-items: center;
+			z-index: inherit;
+		}
+	}
+
+	.profileInfo {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		padding: 0.5em;
+		border-bottom: 0.1rem solid var(--colorF2);
+		z-index: inherit;
+		a {
+			text-decoration: none;
+			color: inherit;
+			z-index: inherit;
+		}
+	}
+}

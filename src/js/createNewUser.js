@@ -5,34 +5,41 @@ export function createNewUser(userData) {
 	//Modifying data
 	let createdProfile = new Date(userData.createdAt)
 	let createdProfileM = `${createdProfile.getUTCDay()} ${createdProfile.getUTCMonth()} ${createdProfile.getUTCFullYear()}`
-	if (userData.company == null && 'undefined') userData.company = 'No company'
 
-	// Create new div.userProfile
-	let profile = document.createElement('div')
-	profile.classList.add('userProfile')
-	profile.innerHTML =
+	let userInformation = document.getElementById('userInformation')
+	userInformation.innerHTML =
 		`
-		<div class="remove-record color-gray1">Remove record of <span>${userData.name}</span></div>
-		<div class="photo" style="background-image: url(${userData.avatarUrl})"></div>
-		<div class="userStatsAll">
-			<div class="userStat color-gray1">Public repos: <span>${userData.repositories.totalCount}</span></div>
-			<div class="userStat color-gray1">Public gists: <span>${userData.gists.totalCount}</span></div>
-			<div class="userStat color-gray1">Followers: <span>${userData.followers.totalCount}</span></div>
-			<div class="userStat color-gray1">Following: <span>${userData.following.totalCount}</span></div>
+		<div class="background"></div>
+		
+		<div class="extendedProfile">
+			<div class="nav-link">
+				<div class="backToList color-gray1">Back to users list</div>
+				<a class="goToProfile color-gray1" target="_blank" href="${userData.url}">View <span>${userData.login}</span> profile on GitHub</a>
+			</div>
+			<div class="extendedUserPhoto" style="background-image: url(${userData.avatarUrl})"></div>
+			<div class="userStatsAll">
+				<div class="userStat color-gray1">Public repos: <span>${userData.repositories.totalCount}</span></div>
+				<div class="userStat color-gray1">Public gists: <span>${userData.gists.totalCount}</span></div>
+				<div class="userStat color-gray1">Followers: <span>${userData.followers.totalCount}</span></div>
+				<div class="userStat color-gray1">Following: <span>${userData.following.totalCount}</span></div>
+			</div>
+			<div class="profileInfo color-gray1">Login: <span>${userData.login}</span></div>
+			<div class="profileInfo color-gray1">Name: <span>${userData.name}</span></div>
+			<div class="profileInfo color-gray1">Member since: <span>${createdProfileM}</span></div>
+			<div class="profileInfo color-gray1">Company: <span>${userData.company === null && 'undefined' ? userData.company = `No company` : userData.company}</span></div>
+			<div class="profileInfo color-gray1">Web-Site: <span>${userData.websiteUrl}</span></div>
+			<div class="profileInfo color-gray1">E-mail: <span>${userData.email}</span></div>
+			<div class="profileInfo color-gray1">Employee: <span>${userData.isEmployee ? 'Yes' : 'No'}</span></div>
+			<div class="profileInfo color-gray1">Location: <span>${userData.location}</span></div>
+			<div class="profileInfo color-gray1">Ready to work: <span>${userData.isHireable ? 'Yes' : 'No'}</span></div>
+			
 		</div>
-		<div class="userInfo color-gray1">Login: <span>${userData.login}</span></div>
-		<div class="userInfo color-gray1">Name: <span>${userData.name}</span></div>
-		<div class="userInfo color-gray1">Member since: <span>${createdProfileM}</span></div>
-		<div class="userInfo color-gray1">Member since: <span>${createdProfile}</span></div>
-		<div class="userInfo color-gray1">Company: <span>${userData.company}</span></div>
-		<div class="userInfo color-gray1">Web-Site: <span>${userData.websiteUrl}</span></div>
-		<div class="userInfo color-gray1">E-mail: <span>${userData.email}</span></div>
-		<div class="userInfo color-gray1">Employee: <span>${userData.isEmployee ? 'Yes' : 'No'}</span></div>
-		<div class="userInfo color-gray1">Location: <span>${userData.location}</span></div>
-		<div class="userInfo color-gray1">Ready to work: <span>${userData.isHireable ? 'Yes' : 'No'}</span></div>
-		<a class="goToProfile color-gray1" href="${userData.url}">View <span>${userData.login}</span> profile on GitHub</a>
 	`
-	insertDiv(profile)
+	document.querySelector('.backToList').addEventListener('click',  () =>	{
+		while (userInformation.firstChild) {
+			userInformation.removeChild(userInformation.firstChild)
+		}
+	})
 }
 
 let searchResult = [
@@ -114,14 +121,6 @@ let searchResult = [
 		]
 	}
 ]
-
-//Paste new element after 'form'
-function insertDiv(divElement) {
-	let bigDiv = document.querySelector('.bigDiv.active')
-	let form = bigDiv.querySelector('form')
-	bigDiv.insertBefore(divElement, form.nextSibling)
-}
-
 
 let BradTraversy = {
 	'name': 'Brad Traversy',

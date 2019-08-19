@@ -42,7 +42,7 @@
       <envs />
     </TaskOptions>
     <enabled-global>
-      <option value="SCSS Node" />
+      <option value="SCSS" />
     </enabled-global>
   </component>
 </project>
