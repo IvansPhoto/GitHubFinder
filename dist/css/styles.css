@@ -246,12 +246,17 @@ nav .tab.active {
   z-index: 1;
 }
 
-.extendedProfile {
+.activeProfile {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
+  z-index: 2;
+}
+
+.extendedProfile {
+  position: relative;
   display: grid;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -261,6 +266,7 @@ nav .tab.active {
   padding-top: 3rem;
   width: 75vw;
   margin-left: 25vw;
+  min-height: 100%;
   background: var(--colorB0);
   z-index: 2;
   overflow-y: scroll;

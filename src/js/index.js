@@ -60,7 +60,7 @@ document.getElementById('Form-UserSearcher').addEventListener('submit', e => {
 	GitHubGraphQL(querySearchUsers, variables)
 		.then(data => userSearch(data.search))
 		.catch(error => console.error(error))
-	document.getElementById('Form-UserSearcher').reset()
+	// document.getElementById('Form-UserSearcher').reset()
 	e.preventDefault()
 })
 
@@ -96,9 +96,6 @@ function createListOfUser(userData) {
 		<div class="userInfo color-gray1"><a target="_blank" href="${userData.url}">View <span>${userData.login}</span> profile on GitHub</a></div>
 		`
 	profile.addEventListener('click', function (e) {
-		console.log(userData.login)
-		console.log(e.target)
-		console.log(this)
 		if (e.target.classList.contains('remove')) {
 			this.remove()
 			// e.target.parentElement.parentElement.remove()
