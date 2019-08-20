@@ -1,10 +1,15 @@
 import {queryProfileUser} from './queries'
 import {GraphQLClient} from 'graphql-request'
 
+//Modifying date
+function formatDate(rawDate) {
+	let createdProfile = new Date(rawDate)
+	return createdProfile = `${createdProfile.getUTCDay()} ${createdProfile.getUTCMonth()} ${createdProfile.getUTCFullYear()}`
+}
+
 export function createNewUser(userData) {
-	//Modifying data
-	let createdProfile = new Date(userData.createdAt)
-	createdProfile = `${createdProfile.getUTCDay()} ${createdProfile.getUTCMonth()} ${createdProfile.getUTCFullYear()}`
+
+	let createdProfile = formatDate(userData.createdAt)
 
 	let userInformation = document.getElementById('userInformation')
 	userInformation.classList.add('activeProfile')
@@ -37,22 +42,22 @@ export function createNewUser(userData) {
 		<div class="profileInfo color-gray1">Member since: <span>${createdProfile}</span></div>
 		<div class="profileInfo color-gray1">Company: <span>${userData.company === null && 'undefined' ? userData.company = `No company` : userData.company}</span></div>
 		<div class="profileInfo color-gray1">Web-Site: <span>${userData.websiteUrl}</span></div>
-		<div class="profileInfo color-gray1">E-mail: <span>${userData.email}</span></div>
 		<div class="profileInfo color-gray1">Employee: <span>${userData.isEmployee ? 'Yes' : 'No'}</span></div>
-		<div class="profileInfo color-gray1">Location: <span>${userData.location}</span></div>
+		<div class="profileInfo color-gray1">E-mail: <span>${userData.email}</span></div>
 		<div class="profileInfo color-gray1">Ready to work: <span>${userData.isHireable ? 'Yes' : 'No'}</span></div>
+		<div class="profileInfo color-gray1">Location: <span>${userData.location}</span></div>
 	`
 
 	let repositories = document.createElement('div')
 	repositories.classList.add('repositories')
-	if (userData.repositories.totalCount > 0) repositories.innerHTML = `<div class="aboutRepositories color-gray2">All Repositories <span>${userData.name}</span></div>`
+	if (userData.repositories.totalCount > 0) repositories.innerHTML = `<div class="aboutRepositories color-gray1">All Repositories <span>${userData.name}</span></div>`
 
 	userData.repositories.nodes.forEach(element => {
 		let oneRepos = document.createElement('div')
 		oneRepos.classList.add('oneRepository')
 		oneRepos.innerHTML = `
 			<div class="reposName color-gray2"><a href="${element.url}" target="_blank">${element.name}</a></div>
-			<div class="reposDate color-gray1">${element.createdAt}</div>
+			<div class="reposDate color-gray1">${formatDate(element.createdAt)}</div>
 		`
 		repositories.appendChild(oneRepos)
 	})

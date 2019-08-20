@@ -333,6 +333,7 @@ nav .tab.active {
 .activeProfile .repositories .aboutRepositories {
   padding: 0.5em 1em;
   border-bottom: 0.1rem solid var(--colorF2);
+  text-transform: uppercase;
 }
 .activeProfile .repositories .oneRepository {
   display: flex;
