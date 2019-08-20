@@ -40,6 +40,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: var(--colorB0);
 }
 
@@ -61,13 +62,11 @@ h3 {
 }
 
 .color-gray1 {
-    //box-shadow: 0 0 0.25rem 0.15rem var(--colorB2);
     //background-color: var(--colorF2);
     color: var(--colorB2);
 }
 
 .color-gray2 {
-    //box-shadow: 0 0 0.25rem 0.15rem var(--colorF2);
     background-color: var(--colorB0);
     color: var(--colorF1);
 }
@@ -82,7 +81,6 @@ button,
 select {
     font-size: 1.5rem;
     padding: 0.5rem;
-    //margin: 0.15rem 0;
 }
 
 @import 'userProfile';

@@ -34,6 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: var(--colorB0);
 }
 
@@ -170,7 +171,7 @@ span:after {
 
 header, footer {
   max-width: 100%;
-  width: 100vw;
+  width: 100%;
   height: 3rem;
   font-size: 1.5rem;
   display: flex;
@@ -194,7 +195,7 @@ footer {
 }
 
 nav {
-  width: 100vw;
+  width: 100%;
   display: grid;
   align-items: center;
   justify-content: stretch;
@@ -253,44 +254,41 @@ nav .tab.active {
   right: 0;
   left: 0;
   z-index: 2;
-}
-
-.extendedProfile {
-  position: relative;
   display: grid;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  grid-template-columns: 2fr 5fr;
-  grid-template-rows: repeat(6, auto);
-  align-content: flex-start;
-  padding-top: 3rem;
-  width: 75vw;
-  margin-left: 25vw;
-  min-height: 100%;
+  grid-template-columns: 1fr;
+  align-content: start;
+  width: 85vw;
+  margin-left: auto;
+  overflow: auto;
   background: var(--colorB0);
-  z-index: 2;
-  overflow-y: scroll;
-  overflow-x: auto;
 }
-.extendedProfile .nav-link {
-  grid-column: span 2;
+.activeProfile .nav-link {
   height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 2;
   text-transform: uppercase;
+  padding: 0 3rem;
 }
-.extendedProfile .nav-link .backToList {
+.activeProfile .nav-link .backToList {
   color: var(--colorF1);
   z-index: 2;
 }
-.extendedProfile .nav-link .goToProfile {
+.activeProfile .nav-link .goToProfile {
   text-align: center;
   text-decoration: none;
   z-index: inherit;
 }
-.extendedProfile .extendedUserPhoto {
+.activeProfile .extendedProfile {
+  display: grid;
+  padding: 1.5rem;
+  grid-template-columns: 2fr 5fr;
+  grid-template-rows: repeat(6, auto);
+  align-content: flex-start;
+  z-index: 2;
+}
+.activeProfile .extendedProfile .extendedUserPhoto {
   grid-column: span 1;
   grid-row: span 6;
   background-size: contain;
@@ -298,7 +296,7 @@ nav .tab.active {
   background-position: center;
   z-index: inherit;
 }
-.extendedProfile .userStatsAll {
+.activeProfile .extendedProfile .userStatsAll {
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: var(--borderRadius);
@@ -307,13 +305,13 @@ nav .tab.active {
   border-radius: var(--borderRadius);
   z-index: inherit;
 }
-.extendedProfile .userStatsAll .userStat {
+.activeProfile .extendedProfile .userStatsAll .userStat {
   padding: 0.5em;
   display: flex;
   align-items: center;
   z-index: inherit;
 }
-.extendedProfile .profileInfo {
+.activeProfile .extendedProfile .profileInfo {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -321,10 +319,35 @@ nav .tab.active {
   border-bottom: 0.1rem solid var(--colorF2);
   z-index: inherit;
 }
-.extendedProfile .profileInfo a {
+.activeProfile .extendedProfile .profileInfo a {
   text-decoration: none;
   color: inherit;
   z-index: inherit;
+}
+.activeProfile .repositories {
+  display: grid;
+  justify-content: center;
+  padding: 0 1.5rem;
+  grid-template-columns: repeat(auto-fit, 25rem);
+}
+.activeProfile .repositories .aboutRepositories {
+  padding: 0.5em 1em;
+  border-bottom: 0.1rem solid var(--colorF2);
+}
+.activeProfile .repositories .oneRepository {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  border-bottom: 0.1rem solid var(--colorF2);
+}
+.activeProfile .repositories .oneRepository a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.noScroll {
+  overflow: hidden;
 }
 
 @media (orientation: portrait) {

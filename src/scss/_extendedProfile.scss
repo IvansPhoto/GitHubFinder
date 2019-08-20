@@ -7,6 +7,7 @@
 	background: hsla(0, 0%, 0%, 0.5);
 	z-index: 1;
 }
+
 .activeProfile {
 	position: fixed;
 	top: 0;
@@ -15,29 +16,24 @@
 	left: 0;
 	z-index: 2;
 
-}
-.extendedProfile {
-	position: relative;
 	display: grid;
-	padding-left: 3rem;
-	padding-right: 3rem;
-	grid-template-columns: 2fr 5fr;
-	grid-template-rows: repeat(6, auto);
-	align-content: flex-start;
-	padding-top: 3rem;
-	width: 75vw;
-	margin-left: 25vw;
-	min-height: 100%;
-	background: var(--colorB0);
-	z-index: 2;
-	overflow-y: scroll;
-	overflow-x: auto;
-	//animation-name: fade-in-right;
-	//animation-duration: 500ms;
-	//transition: 300ms ease-in-out;
+	grid-template-columns: 1fr;
+	align-content: start;
 
+	width: 85vw;
+	margin-left: auto;
+
+	overflow: auto;
+	background: var(--colorB0);
+
+//.warpProfile{
+//	position: relative;
+//	top: auto;
+//	bottom: auto;
+//	right: auto;
+//	left: auto;
+//}
 	.nav-link {
-		grid-column: span 2;
 		height: 3rem;
 		display: flex;
 		align-items: center;
@@ -46,57 +42,94 @@
 		//color: var(--colorF1);
 		z-index: 2;
 		text-transform: uppercase;
+		padding: 0 3rem;
 
 		.backToList {
 			color: var(--colorF1);
 			z-index: 2;
 		}
-
 		.goToProfile {
 			text-align: center;
 			text-decoration: none;
 			z-index: inherit;
 		}
 	}
-	.extendedUserPhoto {
-		grid-column: span 1;
-		grid-row: span 6;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		z-index: inherit;
-	}
 
-
-	.userStatsAll {
+	.extendedProfile {
 		display: grid;
-		grid-template-columns: repeat(4, auto);
-		gap: var(--borderRadius);
-		justify-content: space-between;
-		border-bottom: 0.1rem solid var(--colorF2);
-		border-radius: var(--borderRadius);
-		z-index: inherit;
+		padding: 1.5rem;
+		grid-template-columns: 2fr 5fr;
+		grid-template-rows: repeat(6, auto);
+		align-content: flex-start;
+		//width: 75vw;
+		//margin-left: 25vw;
+		z-index: 2;
 
-		.userStat {
-			padding: 0.5em;
+		.extendedUserPhoto {
+			grid-column: span 1;
+			grid-row: span 6;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			z-index: inherit;
+		}
+		.userStatsAll {
+			display: grid;
+			grid-template-columns: repeat(4, auto);
+			gap: var(--borderRadius);
+			justify-content: space-between;
+			border-bottom: 0.1rem solid var(--colorF2);
+			border-radius: var(--borderRadius);
+			z-index: inherit;
+
+			.userStat {
+				padding: 0.5em;
+				display: flex;
+				align-items: center;
+				z-index: inherit;
+			}
+		}
+		.profileInfo {
 			display: flex;
 			align-items: center;
+			justify-content: start;
+			padding: 0.5em;
+			border-bottom: 0.1rem solid var(--colorF2);
 			z-index: inherit;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+				z-index: inherit;
+			}
 		}
 	}
 
-	.profileInfo {
-		display: flex;
-		align-items: center;
-		justify-content: start;
-		padding: 0.5em;
-		border-bottom: 0.1rem solid var(--colorF2);
-		z-index: inherit;
-		a {
-			text-decoration: none;
-			color: inherit;
-			z-index: inherit;
+	.repositories {
+		display: grid;
+		justify-content: center;
+		padding: 0 1.5rem;
+		grid-template-columns: repeat(auto-fit, 25rem);
+		.aboutRepositories {
+			padding: 0.5em 1em;
+			border-bottom: 0.1rem solid var(--colorF2);
+		}
+
+		.oneRepository {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0.5em 1em;
+			border-bottom: 0.1rem solid var(--colorF2);
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
 		}
 	}
 }
 
+.noScroll {
+	overflow: hidden;
+}

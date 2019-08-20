@@ -8,6 +8,9 @@ export function createNewUser(userData) {
 
 	let userInformation = document.getElementById('userInformation')
 	userInformation.classList.add('activeProfile')
+	// let warpProfile = document.createElement('div')
+	// warpProfile.classList.add('warpProfile')
+	// userInformation.appendChild(warpProfile)
 
 	let background = document.createElement('div')
 	background.classList.add('background')
@@ -42,12 +45,14 @@ export function createNewUser(userData) {
 
 	let repositories = document.createElement('div')
 	repositories.classList.add('repositories')
+	if (userData.repositories.totalCount > 0) repositories.innerHTML = `<div class="aboutRepositories color-gray2">All Repositories <span>${userData.name}</span></div>`
+
 	userData.repositories.nodes.forEach(element => {
 		let oneRepos = document.createElement('div')
 		oneRepos.classList.add('oneRepository')
 		oneRepos.innerHTML = `
-			<div class="reposName"><a href="${element.url}">${element.name}</a></div>
-			<div class="reposDate">${element.createdAt}</div>
+			<div class="reposName color-gray2"><a href="${element.url}" target="_blank">${element.name}</a></div>
+			<div class="reposDate color-gray1">${element.createdAt}</div>
 		`
 		repositories.appendChild(oneRepos)
 	})
@@ -57,6 +62,7 @@ export function createNewUser(userData) {
 	userInformation.appendChild(nav)
 	userInformation.appendChild(extendedProfile)
 	userInformation.appendChild(repositories)
+	document.querySelector('body').classList.add('noScroll')
 
 	document.querySelector('.backToList').addEventListener('click', () => {
 		while (userInformation.firstChild) {
@@ -64,6 +70,7 @@ export function createNewUser(userData) {
 		}
 		background.remove()
 		userInformation.classList.remove('activeProfile')
+		document.querySelector('body').classList.remove('noScroll')
 	})
 }
 
