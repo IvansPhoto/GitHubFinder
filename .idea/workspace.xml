@@ -47,7 +47,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="project" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Ivan\AppData\Roaming\npm\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -132,7 +132,8 @@
       <workItem from="1566113077029" duration="12729000" />
       <workItem from="1566208338914" duration="619000" />
       <workItem from="1566219885979" duration="9520000" />
-      <workItem from="1566283687612" duration="10799000" />
+      <workItem from="1566283687612" duration="10824000" />
+      <workItem from="1566372906472" duration="1383000" />
     </task>
     <task id="LOCAL-00001" summary="Added form">
       <created>1563548958728</created>

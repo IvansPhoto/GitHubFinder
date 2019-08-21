@@ -4,7 +4,7 @@ import {GraphQLClient} from 'graphql-request'
 //Modifying date
 function formatDate(rawDate) {
 	let createdProfile = new Date(rawDate)
-	return createdProfile = `${createdProfile.getUTCDay()} ${createdProfile.getUTCMonth()} ${createdProfile.getUTCFullYear()}`
+	return createdProfile.toLocaleDateString('en-AU',({ year: 'numeric', month: 'long', day: 'numeric' }))
 }
 
 export function createNewUser(userData) {
