@@ -1,5 +1,6 @@
 :root {
   font-size: 19px;
+  --colorRed: hsl(220, 20%, 16%);
   --colorB0: hsla(0, 0%, 14%, 1);
   --colorB1: hsla(195, 25%, 15%, 1);
   --colorB2: hsla(199, 60%, 60%, 1);
@@ -235,6 +236,32 @@ nav .tab.active {
 
 #Tab-AccessKey {
   clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#paginationButton {
+  width: var(--width);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  padding: 0.5em 0;
+}
+#paginationButton #previousPage {
+  visibility: hidden;
+  text-align: center;
+  color: var(--colorB2);
+}
+#paginationButton #previousPage:hover {
+  color: var(--colorF1);
+}
+#paginationButton #nextPage {
+  visibility: hidden;
+  text-align: center;
+  color: var(--colorB2);
+}
+#paginationButton #nextPage:hover {
+  color: var(--colorF1);
 }
 
 .background {

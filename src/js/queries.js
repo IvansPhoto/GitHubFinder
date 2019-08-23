@@ -1,19 +1,69 @@
-export const querySearchUsers = `
-query userFinder($login: String!) {
-	search(first: 15, type: USER, query: $login) {
-		edges {
-			textMatches {
-				fragment
-				property
+export const querySearchUsersPagination = (login, before, after, previousPage = 'false', nextPage = 'false') => {
+
+	let q = `
+	query userFinder {
+		search(first: 30, type: USER, query: "${login}") {
+			edges {
+				textMatches {
+					fragment
+					property
+				}
+			}
+			userCount
+			pageInfo {
+				startCursor
+	            endCursor
+				hasNextPage
+				hasPreviousPage
 			}
 		}
-		userCount
-		pageInfo {
-			hasNextPage
-			hasPreviousPage
+	}`
+
+	let qPreviousPage = `
+	query userFinder {
+		search(last: 30, type: USER, query: "${login}", before: "${before}") {
+			edges {
+				textMatches {
+					fragment
+					property
+				}
+			}
+			userCount
+			pageInfo {
+				startCursor
+				endCursor
+				hasNextPage
+				hasPreviousPage
+			}
 		}
+	}`
+
+	let qNextPage = `
+	query userFinder {
+		search(first: 30, type: USER, query: "${login}", after: "${after}") {
+			edges {
+				textMatches {
+					fragment
+					property
+				}
+			}
+			userCount
+			pageInfo {
+				startCursor
+				endCursor
+				hasNextPage
+				hasPreviousPage
+			}
+		}
+	}`
+
+
+	if (previousPage && nextPage) return q
+	else {
+		if (previousPage) return qPreviousPage
+		if (nextPage) return qNextPage
 	}
-}`;
+}
 
 export const queryProfileUser = (login) => `
 query userProfile {
@@ -32,7 +82,7 @@ query userProfile {
 		isEmployee
 		isHireable
 		isDeveloperProgramMember
-		repositories(first: 50) {
+		repositories(first: 100) {
 			totalCount
 			pageInfo {
 				hasNextPage
@@ -56,7 +106,7 @@ query userProfile {
 			totalCount
 		}
 	}
-}`;
+}`
 
 export const queryShortProfileUser = `
 query userProfile($login: String!) 
@@ -71,4 +121,4 @@ query userProfile($login: String!)
 		avatarUrl
 		websiteUrl
 	}
-}`;
+}`

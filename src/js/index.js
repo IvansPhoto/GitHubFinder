@@ -1,8 +1,8 @@
 import {GraphQLClient} from 'graphql-request'
 import {queryProfileUser} from './queries'
-import {querySearchUsers} from './queries'
 import {createNewUser} from './createNewUser'
 import {queryShortProfileUser} from './queries'
+import {querySearchUsersPagination} from './queries'
 
 //Const for messages on the top of the page.
 const headerAdding = document.querySelector('header span')
@@ -16,10 +16,10 @@ checkAK()
 // Checking LS for presence of an access key.
 function checkAK() {
 	if (access === null || undefined || ``) {
-		console.log('Insert an access key for access search!')
 		headerAdding.innerText = `The access key not found.`
 		headerAdding.classList.add('red')
 		header.classList.add('gray')
+		console.log('Insert an access key for access search!')
 	} else {
 		headerAdding.classList.remove('red')
 		header.classList.remove('gray')
@@ -45,32 +45,88 @@ async function GitHubGraphQL(query, variables) {
 	return await graphQLClient.request(query, variables)
 }
 
+let endCursor
+let startCursor
+let hasNextPage = false
+let hasPreviousPage = false
+let login
+let ResultList = document.getElementById('ResultList')
+const nextPage = document.getElementById('nextPage')
+const previousPage = document.getElementById('previousPage')
+
+function clearListResult(node) {
+	while (node.firstChild) {
+		node.removeChild(node.firstChild)
+	}
+} // Clear the list from previous search
+
+
+function transferParams(params) {
+	if (params.hasNextPage) nextPage.style.visibility = 'visible'
+	else nextPage.style.visibility = 'hidden'
+	if (params.hasPreviousPage) previousPage.style.visibility = 'visible'
+	else previousPage.style.visibility = 'hidden'
+	endCursor = params.endCursor
+	startCursor = params.startCursor
+	hasNextPage = params.hasNextPage
+	hasPreviousPage = params.hasPreviousPage
+
+	console.log(params)
+}
 
 // Getting part of a user login for searching a user.
-document.getElementById('Form-UserSearcher').addEventListener('submit', e => {
-	// Clear the list from previous search
-	let ResultList = document.getElementById('ResultList')
-	while (ResultList.firstChild) {
-		ResultList.removeChild(ResultList.firstChild)
-	}
+document.getElementById('Form-UserSearcher').addEventListener('submit', function mainSearch(e) {
+	clearListResult(ResultList)
 
-	//Input a login
-	const login = document.getElementById('UserSearcher').value
-	let variables = {login: `${login}`}
-	GitHubGraphQL(querySearchUsers, variables)
-		.then(data => userSearch(data.search))
+	login = document.getElementById('UserSearcher').value //Input a login
+	GitHubGraphQL(querySearchUsersPagination(login))
+		.then(data => {
+			transferParams(data.search.pageInfo)
+			userSearch(data.search)
+		})
 		.catch(error => console.error(error))
-	// document.getElementById('Form-UserSearcher').reset()
+
+
+	// document.getElementById('Form-UserSearcher').reset()	//Making clear the input field after inputted a login
 	e.preventDefault()
 })
 
-function userSearch(data) {
-	data.edges.forEach(item => {
+nextPage.addEventListener('click', e => {
+	clearListResult(ResultList)
+
+	console.log(endCursor, startCursor, hasPreviousPage, hasNextPage)
+
+	GitHubGraphQL(querySearchUsersPagination(login, startCursor, endCursor, false, true))
+		.then(data => {
+			transferParams(data.search.pageInfo)
+			userSearch(data.search)
+		})
+		.catch(error => console.error(error))
+	e.preventDefault()
+})
+
+previousPage.addEventListener('click', e => {
+	clearListResult(ResultList)
+
+	console.log(endCursor, startCursor, hasPreviousPage, hasNextPage)
+
+	GitHubGraphQL(querySearchUsersPagination(login, startCursor, endCursor, true, false))
+		.then(data => {
+			transferParams(data.search.pageInfo)
+			userSearch(data.search)
+		})
+		.catch(error => console.error(error))
+	e.preventDefault()
+})
+
+
+function userSearch(dataSearch) {
+	dataSearch.edges.forEach(item => {
 		item.textMatches.forEach(subItem => {
 			if (subItem.property === 'login') {
 				let variables = {login: `${subItem.fragment}`}
 				GitHubGraphQL(queryShortProfileUser, variables)
-					.then(data => createListOfUser(data.user))
+					.then(userShortProfile => createListOfUser(userShortProfile.user))
 					.catch(error => console.error(error))
 			}
 		})
