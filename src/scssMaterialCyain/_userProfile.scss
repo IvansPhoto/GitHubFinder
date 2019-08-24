@@ -14,63 +14,72 @@ form {
 	width: var(--width);
 	display: grid;
 	grid-template-columns: 3fr 5fr;
-	//gap: 0.3rem;
-	> * {
-		border-bottom: 0.1rem solid var(--colorF2);
-	}
 
 	label {
 		text-align: center;
 		text-transform: uppercase;
+        color: var(--colorWhite);
+        background-color: var(--colorCyan);
 	}
-
+    input {
+        color: var(--colorGreyWhite);
+        background-color: var(--colorCyanD);
+        &:current {
+            color: var(--colorWhite);
+        }
+    }
 	button {
 		grid-column: span 2;
 		text-align: center;
 		text-transform: uppercase;
-		cursor: pointer;
-
-		&:hover {
-			filter: hue-rotate(-180deg);
-		}
+        color: var(--colorWhite);
+        background-color: var(--colorCyanL);
+        &:hover {
+            background-color: var(--colorCyanD);
+        }
 	}
 }
 
 
 .userProfile {
 	width: var(--width);
-	margin: 2rem 0;
+	//margin: 2rem 0;
 	display: grid;
-	gap: 0.5rem;
 	grid-template-columns: 2fr 5fr;
 	grid-template-rows: repeat(6, auto);
 
+    > *:nth-child(even){
+        color: var(--colorWhite);
+        background-color: var(--colorCyanD);
+    }
+    > *:nth-child(odd){
+        color: var(--colorWhite);
+        background-color: var(--colorCyan);
+    }
 	.record {
 		padding: 0.5em;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		border-bottom: 0.1rem solid var(--colorF2);
 		text-transform: uppercase;
-        filter: hue-rotate(-15deg);
-		background-color: var(--colorB1);
-
-		> * {
-			&:hover {
-				//color: var(--colorB3);
-				filter: hue-rotate(-180deg);
-				cursor: pointer;
-			}
+		color: var(--colorGreyWhite);
+		background-color: var(--colorCyanL);
+        .openProfile:hover {
+            color: var(--colorWhite);
+        }
+		.remove:hover {
+			color: var(--colorWhite);
 		}
 	}
 
 	.photo {
 		grid-column: span 1;
 		grid-row: span 6;
-		//background-image: url('https://avatars1.githubusercontent.com/u/50179458?v=4');
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+        color: var(--colorWhite);
+        background-color: hsla(0, 0, 0, 0);
 	}
 
 	.userInfo {
@@ -78,7 +87,6 @@ form {
 		align-items: center;
 		justify-content: start;
 		padding: 0.5em;
-		border-bottom: 0.1rem solid var(--colorF2);
 
 		a {
 			text-decoration: none;
@@ -99,7 +107,7 @@ form {
 }
 
 span {
-	color: var(--colorF1);
+	//color: var(--colorF1);
 	margin: 0 0.25em;
 }
 

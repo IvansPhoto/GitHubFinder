@@ -1,0 +1,104 @@
+header, footer {
+	max-width: 100%;
+	width: var(--width);
+	height: 3rem;
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--colorWhite);
+	background-color: var(--colorCyan);
+
+	//&.gray {
+	//	color: var(--colorGrey) !important;
+	//}
+
+	span {
+		color: var(--colorWhite);
+		&.red {
+			color: red !important;
+			background-color: var(--colorCyanD);
+		}
+	}
+}
+
+footer {
+	bottom: 0;
+}
+
+nav {
+	width: var(--width);
+	display: grid;
+	align-items: center;
+	justify-content: stretch;
+	grid-template-columns: repeat(2, auto);
+
+	.tab {
+		font-size: 1.5rem;
+		padding: 0.5rem 1em;
+		color: var(--colorGreyWhite);
+		background-color: var(--colorCyan);
+		text-align: center;
+
+		&:hover {
+			color: var(--colorWhite);
+			transition: 300ms;
+			background-color: var(--colorCyan);
+		}
+
+		&.active {
+			color: var(--colorWhite);
+			background-color: var(--colorCyanD);
+		}
+	}
+}
+
+//.foldersPart {
+//	height: 1rem;
+//	grid-column: span 3;
+//	background-color: var(--colorB0);
+//}
+
+//#Tab-UserSearcher {clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);}
+//#Tab-UserByLogin {clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);}
+//#Tab-AccessKey {clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%);}
+
+#paginationButton {
+    width: var(--width);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: uppercase;
+
+	font-size: 1.35rem;
+
+	#previousPage {
+		visibility: hidden;
+        text-align: center;
+
+        width: 100%;
+        padding: 0.5em;
+
+		color: var(--colorGreyWhite);
+        background-color: var(--colorCyan);
+		&:hover {
+			color: var(--colorWhite);
+			background-color: var(--colorCyanL);
+		}
+	}
+
+	#nextPage {
+		visibility: hidden;
+        text-align: center;
+
+        width: 100%;
+        padding: 0.5em;
+
+		color: var(--colorGreyWhite);
+		background-color: var(--colorCyan);
+		&:hover {
+			color: var(--colorWhite);
+			background-color: var(--colorCyanL);
+		}
+	}
+}

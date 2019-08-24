@@ -1,0 +1,146 @@
+:root {
+    font-size: 19px;
+    --colorRedLight: hsl(0, 75%, 40%);
+    --colorRed: hsl(0, 75%, 30%);
+    --colorRedDark: hsl(0, 75%, 10%);
+    --colorRedOrange: hsl(10, 85%, 30%);
+    --colorRedOrangeLight: hsl(10, 75%, 60%);
+    --colorRedYellow: hsl(20, 95%, 30%);
+
+    --colorOrange: hsl(30, 85%, 50%);
+    --colorYellow: hsl(49, 87%, 50%);
+    --colorGreen: hsl(120, 75%, 30%);
+
+
+
+    --colorCyanBlueL: hsl(195, 75%, 35%);
+    --colorCyanBlue: hsl(195, 75%, 25%);
+    --colorCyanBlueD: hsl(195, 75%, 15%);
+
+    --colorCyanL: hsl(180, 75%, 35%);
+    --colorCyan: hsl(180, 75%, 25%);
+    --colorCyanD: hsl(180, 75%, 12.5%);
+    --colorCyanDD: hsl(180, 75%, 5%);
+
+    --colorCyanGreenL: hsl(165, 75%, 35%);
+    --colorCyanGreen: hsl(165, 75%, 25%);
+    --colorCyanGreenD: hsl(165, 75%, 15%);
+
+
+    --colorBlue: hsl(240, 85%, 20%);
+
+    --colorPurpule: hsl(300, 75%, 30%);
+    --colorPurpuleBlue: hsl(280, 55%, 40%);
+
+    --colorWhite: hsl(0, 0%, 95%);
+    --colorGreyWhite: hsl(0, 0%, 75%);
+    --colorGrey: hsl(0, 0%, 50%);
+    --colorGreyBlack: hsl(0, 0%, 25%);
+    --colorBlack: hsl(0, 0%, 5%);
+    //--colorB1: hsla(195, 20%, 14%, 1);
+    //--colorB2: hsla(199, 60%, 60%, 1);
+    //--colorB3: hsla(210, 48%, 74%, 1);
+    //--colorF1: hsla(21, 81%, 67%, 1);
+    --colorB0: hsla(0, 0%, 14%, 1);
+    --colorB1: hsla(195, 25%, 15%, 1);
+    --colorB2: hsla(199, 60%, 60%, 1);
+    --colorB3: hsla(210, 48%, 74%, 1);
+    --colorF1: hsla(21, 81%, 67%, 1);
+
+    --colorF2: hsla(200, 30%, 17%, 1);
+    --borderRadius: 0;
+    --width: 75vw;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+input,
+button {
+    all: unset;
+    text-align: center;
+}
+
+body {
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorCyanDD);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1.5rem 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 1rem 0 0.3rem 0;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+//.color-gray1 {
+//    color: var(--colorGreyWhite);
+//    background-color: var(--colorRed);
+//}
+
+//.color-gray2 {
+//    color: var(--colorWhite);
+//    background-color: var(--colorGreen);
+//}
+
+//.border-radius {
+//    border-radius: var(--borderRadius);
+//}
+
+input,
+label,
+button,
+select {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+@import 'userProfile';
+@import 'nav';
+@import 'extendedProfile';
+
+@media (orientation: portrait) {
+    :root {
+        font-size: 30px;
+        --width: 100vw;
+    }
+    .userProfile {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+
+        .photo {
+            min-height: 50vw;
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .userInfo {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+    }
+}

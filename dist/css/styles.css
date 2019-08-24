@@ -104,6 +104,10 @@ form button {
   grid-column: span 2;
   text-align: center;
   text-transform: uppercase;
+  cursor: pointer;
+}
+form button:hover {
+  filter: hue-rotate(-180deg);
 }
 
 .userProfile {
@@ -121,11 +125,12 @@ form button {
   justify-content: space-between;
   border-bottom: 0.1rem solid var(--colorF2);
   text-transform: uppercase;
+  filter: hue-rotate(-15deg);
   background-color: var(--colorB1);
-  color: var(--colorF1);
 }
-.userProfile .record .remove:hover {
-  color: var(--colorB3);
+.userProfile .record > *:hover {
+  filter: hue-rotate(-180deg);
+  cursor: pointer;
 }
 .userProfile .photo {
   grid-column: span 1;
@@ -220,12 +225,6 @@ nav .tab.active {
   background-color: var(--colorB0);
 }
 
-.foldersPart {
-  height: 1rem;
-  grid-column: span 3;
-  background-color: var(--colorB0);
-}
-
 #Tab-UserSearcher {
   clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
@@ -244,24 +243,23 @@ nav .tab.active {
   align-items: center;
   justify-content: space-around;
   text-transform: uppercase;
+  border-bottom: 0.1rem solid var(--colorF2);
   font-size: 1.35rem;
   padding: 0.5em 0;
 }
-#paginationButton #previousPage {
-  visibility: hidden;
+#paginationButton > * {
   text-align: center;
   color: var(--colorB2);
+  cursor: pointer;
 }
-#paginationButton #previousPage:hover {
-  color: var(--colorF1);
+#paginationButton > *:hover {
+  filter: hue-rotate(-180deg);
+}
+#paginationButton #previousPage {
+  visibility: hidden;
 }
 #paginationButton #nextPage {
   visibility: hidden;
-  text-align: center;
-  color: var(--colorB2);
-}
-#paginationButton #nextPage:hover {
-  color: var(--colorF1);
 }
 
 .background {

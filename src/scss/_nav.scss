@@ -54,12 +54,6 @@ nav {
 	}
 }
 
-.foldersPart {
-	height: 1rem;
-	grid-column: span 3;
-	background-color: var(--colorB0);
-}
-
 #Tab-UserSearcher {
 	clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 100%, 0 100%);
 }
@@ -73,42 +67,28 @@ nav {
 }
 
 #paginationButton {
-    width: var(--width);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    text-transform: uppercase;
-
+	width: var(--width);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	text-transform: uppercase;
+	border-bottom: 0.1rem solid var(--colorF2);
 	font-size: 1.35rem;
 	padding: 0.5em 0;
 
-	#previousPage {
-		visibility: hidden;
-        text-align: center;
-
-        //width: 10rem;
-        //padding: 0.5em;
-        //color: hsl(0, 0%, 85%);
-        //background-color: var(--colorRed);
-
+	> * {
+		text-align: center;
 		color: var(--colorB2);
+		cursor: pointer;
 		&:hover {
-			color: var(--colorF1);
+			filter: hue-rotate(-180deg);
 		}
 	}
 
+	#previousPage {
+		visibility: hidden;
+	}
 	#nextPage {
 		visibility: hidden;
-        text-align: center;
-
-        //width: 10rem;
-        //padding: 0.5em;
-        //color: hsl(0, 0%, 85%);
-        //background-color: var(--colorRed);
-
-		color: var(--colorB2);
-		&:hover {
-			color: var(--colorF1);
-		}
 	}
 }
