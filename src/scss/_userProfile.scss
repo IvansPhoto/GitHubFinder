@@ -93,9 +93,12 @@ form {
 
 .notFound {
 	width: var(--width);
-	padding: 5rem 0;
+	padding: 3rem 0;
 	font-size: 3rem;
 	text-align: center;
+	color: var(--colorRed);
+	border-top: 0.1rem solid var(--colorRed);
+	border-bottom: 0.1rem solid var(--colorRed);
 }
 
 span {

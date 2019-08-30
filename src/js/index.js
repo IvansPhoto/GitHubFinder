@@ -5,9 +5,8 @@ import {queryShortProfileUser} from './queries'
 import {querySearchUsersPagination} from './queries'
 
 //Const for messages on the top of the page.
-const headerAdding = document.querySelector('header span')
 const header = document.querySelector('header')
-
+const ResultList = document.getElementById('ResultList')
 const endpoint = 'https://api.github.com/graphql'
 // Getting an access key from LS.
 let access = localStorage.getItem('access')
@@ -16,17 +15,20 @@ checkAK()
 // Checking LS for presence of an access key.
 function checkAK() {
 	if (access === null || undefined || ``) {
-		headerAdding.innerText = `The access key not found.`
-		headerAdding.classList.add('red')
-		header.classList.add('gray')
+		header.insertAdjacentHTML('afterbegin', `<div class="red">The access key not found.</div>`)
+		// headerAdding.innerText = `The access key not found.`
+		// headerAdding.classList.add('red')
+		// header.classList.add('gray')
 		console.log('Insert an access key for access search!')
 	} else {
-		headerAdding.classList.remove('red')
-		header.classList.remove('gray')
-		headerAdding.innerText = `The access key is loaded.`
+		header.insertAdjacentHTML('afterbegin', `<div class="grey">The access key is loaded.</div>`)
+		// headerAdding.classList.remove('red')
+		// header.classList.remove('gray')
+		// headerAdding.innerText = `The access key is loaded.`
 		console.log('The access key has been loaded successfully.')
 	}
 }
+
 
 // Input an access key.
 document.getElementById('Form-AccessKey').addEventListener('submit', e => {
@@ -50,7 +52,6 @@ let startCursor
 let hasNextPage = false
 let hasPreviousPage = false
 let login
-let ResultList = document.getElementById('ResultList')
 const nextPage = document.getElementById('nextPage')
 const previousPage = document.getElementById('previousPage')
 
@@ -84,10 +85,13 @@ document.getElementById('Form-UserSearcher').addEventListener('submit', function
 			transferParams(data.search.pageInfo)
 			userSearch(data.search)
 		})
-		.catch(error => console.error(error))
+		.catch(error => {
+			console.error(error)
+			let message = createNode('div', 'notFound', `${error}`)
+			ResultList.append(message)
+		})
 
-
-	// document.getElementById('Form-UserSearcher').reset()	//Making clear the input field after inputted a login
+	document.getElementById('Form-UserSearcher').reset()	//Making clear the input field after inputted a login
 	e.preventDefault()
 })
 
@@ -101,9 +105,12 @@ nextPage.addEventListener('click', e => {
 			transferParams(data.search.pageInfo)
 			userSearch(data.search)
 		})
-		.catch(error => console.error(error))
+		.catch(error => {
+			console.error(error)
+		})
 	e.preventDefault()
 })
+
 
 previousPage.addEventListener('click', e => {
 	clearListResult(ResultList)
@@ -119,15 +126,30 @@ previousPage.addEventListener('click', e => {
 	e.preventDefault()
 })
 
+function createNode(type, aClass, text) {
+	let node = document.createElement(`${type}`)
+	node.className = `${aClass}`
+	node.innerText = `${text}`
+	return node
+}
 
 function userSearch(dataSearch) {
+	if (dataSearch.userCount === 0) {
+		let message = createNode('div', 'notFound', `A user "${login}" Not found`)
+		ResultList.append(message)
+	}
+
 	dataSearch.edges.forEach(item => {
 		item.textMatches.forEach(subItem => {
 			if (subItem.property === 'login') {
 				let variables = {login: `${subItem.fragment}`}
 				GitHubGraphQL(queryShortProfileUser, variables)
 					.then(userShortProfile => createListOfUser(userShortProfile.user))
-					.catch(error => console.error(error))
+					.catch(error => {
+						// console.error(error)
+						let message = createNode('div', 'notFound', `${error}`)
+						ResultList.append(message)
+					})
 			}
 		})
 	})

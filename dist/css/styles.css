@@ -1,6 +1,7 @@
 :root {
   font-size: 19px;
-  --colorRed: hsl(220, 20%, 16%);
+  --colorRed: hsl(1, 80%, 57%);
+  --color250: hsl(250, 100%, 75%);
   --colorB0: hsla(0, 0%, 14%, 1);
   --colorB1: hsla(195, 25%, 15%, 1);
   --colorB2: hsla(199, 60%, 60%, 1);
@@ -157,9 +158,12 @@ form button:hover {
 
 .notFound {
   width: var(--width);
-  padding: 5rem 0;
+  padding: 3rem 0;
   font-size: 3rem;
   text-align: center;
+  color: var(--colorRed);
+  border-top: 0.1rem solid var(--colorRed);
+  border-bottom: 0.1rem solid var(--colorRed);
 }
 
 span {
@@ -186,13 +190,10 @@ header, footer {
   background-color: var(--colorB1);
   color: var(--colorF1);
 }
-header.gray, footer.gray {
+header .gray, footer .gray {
   color: gray !important;
 }
-header span, footer span {
-  color: var(--colorB3);
-}
-header span.red, footer span.red {
+header .red, footer .red {
   color: red !important;
 }
 

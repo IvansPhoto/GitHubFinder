@@ -9,16 +9,12 @@ header, footer {
 	background-color: var(--colorB1);
 	color: var(--colorF1);
 
-	&.gray {
+	.gray {
 		color: hsl(0, 0%, 50%) !important;
 	}
 
-	span {
-		color: var(--colorB3);
-
-		&.red {
-			color: red !important;
-		}
+	.red {
+		color: red !important;
 	}
 }
 
@@ -80,6 +76,7 @@ nav {
 		text-align: center;
 		color: var(--colorB2);
 		cursor: pointer;
+
 		&:hover {
 			filter: hue-rotate(-180deg);
 		}
@@ -88,6 +85,7 @@ nav {
 	#previousPage {
 		visibility: hidden;
 	}
+
 	#nextPage {
 		visibility: hidden;
 	}
